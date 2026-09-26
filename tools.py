@@ -9,6 +9,8 @@ import base64
 import json
 import os
 import re
+from datetime import datetime, timezone
+from email.mime.text import MIMEText
 
 from dotenv import load_dotenv
 from swytchcode_runtime import exec as swy_exec, SwytchcodeError
@@ -25,6 +27,9 @@ NOTION_READ_MD = "notion.markdown.get"
 NOTION_READ_BLOCKS = "notion.children.get"
 NOTION_CREATE = "notion.page.create"
 SLACK_POST = "slack.chat.postmessage.create"
+SLACK_HISTORY = "slack.conversations.history.list"
+# Gmail has two "send.create" methods (messages/send and drafts/send). Confirm with `swy info`.
+GMAIL_SEND = os.getenv("GMAIL_SEND_TOOL", "gmail.user.send.create")
 
 NOTION_VERSION = os.getenv("NOTION_VERSION", "2025-09-03")
 MAX_CHARS = int(os.getenv("MAX_DOC_CHARS", "6000"))
@@ -67,6 +72,16 @@ def _notion_exec(tool: str, args: dict):
         return swy_exec(tool, args)
 
 
+def _exec_flex(tool: str, fields: dict):
+    """Some manifests want inputs as the JSON body, others as params. Try body, then params."""
+    try:
+        return swy_exec(tool, {"body": fields})
+    except SwytchcodeError as e:
+        if "validation" not in (e.message or "").lower():
+            raise
+        return swy_exec(tool, {"params": fields})
+
+
 def _truncate(text: str) -> str:
     text = text.strip()
     return text if len(text) <= MAX_CHARS else text[:MAX_CHARS] + "\n...[truncated]"
@@ -79,7 +94,10 @@ def _dumps(obj) -> str:
 # ---------- Gmail ----------
 
 def _headers(payload: dict) -> dict:
-    return {h["name"].lower(): h["value"] for h in payload.get("headers", [])}
+    h = {x["name"].lower(): x["value"] for x in payload.get("headers", [])}
+    if h.get("subject", "").lower().startswith("subject:"):
+        h["subject"] = h["subject"][len("subject:"):].strip()
+    return h
 
 
 def _decode(b64: str) -> str:
@@ -145,6 +163,34 @@ def read_email(message_id: str) -> str:
         "date": h.get("date"),
         "body": _truncate(_email_text(payload)),
     })
+
+
+def send_email(to: str, subject: str, body: str) -> str:
+    """Send a plain-text email from the user's Gmail account.
+
+    Only use this when the user explicitly asks to send or email something, and only to
+    recipients the user named. Sending is restricted to an allow-list of addresses.
+
+    Args:
+        to: Recipient email address.
+        subject: Email subject line.
+        body: Plain-text email body.
+    """
+    allowed = [a.strip().lower() for a in os.getenv("EMAIL_ALLOWED_RECIPIENTS", "").split(",") if a.strip()]
+    if not allowed:
+        return _dumps({"error": "Email sending is disabled (EMAIL_ALLOWED_RECIPIENTS is empty in .env)"})
+    if to.strip().lower() not in allowed:
+        return _dumps({"error": f"Recipient {to} is not on the allow-list; not sent. Allowed: {allowed}"})
+    msg = MIMEText(body, "plain", "utf-8")
+    msg["to"], msg["subject"] = to, subject
+    raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
+    res = swy_exec(GMAIL_SEND, {"params": {"userId": "me"}, "body": {"raw": raw}})
+    d = _data(res) or {}
+    # Gmail returns the new message id on success; no id means it wasn't actually sent.
+    if not d.get("id"):
+        return _dumps({"source": "gmail", "error": "Gmail did not confirm the send (no message id)",
+                       "response": res})
+    return _dumps({"source": "gmail", "sent": True, "to": to, "subject": subject, "id": d["id"]})
 
 
 # ---------- Google Drive ----------
@@ -280,16 +326,53 @@ def create_notion_page(title: str, content: str) -> str:
 # ---------- Slack ----------
 
 def post_slack(text: str) -> str:
-    """Post a short message to the team's Slack channel (e.g. a link to a new brief and the key open items)."""
+    """Post a message to the team's Slack channel (e.g. a link to a new brief and the key open items).
+
+    Only use this when the user asks to share, notify or post something.
+    """
     channel = os.getenv("SLACK_CHANNEL_ID")
     if not channel:
         return _dumps({"error": "SLACK_CHANNEL_ID is not set in .env"})
-    d = _data(swy_exec(SLACK_POST, {"body": {"channel": channel, "text": text}}))
-    return _dumps({"source": "slack", "ok": d.get("ok", True), "ts": d.get("ts"), "error": d.get("error")})
+    d = _data(_exec_flex(SLACK_POST, {"channel": channel, "text": text}))
+    if isinstance(d, dict) and d.get("ok") is False:  # Slack returns HTTP 200 with ok=false on errors
+        return _dumps({"source": "slack", "error": d.get("error")})
+    return _dumps({"source": "slack", "posted": True, "channel": channel, "ts": (d or {}).get("ts")})
 
 
-TOOLS = [search_gmail, read_email, search_drive, read_drive_file,
-         search_notion, read_notion_page, create_notion_page, post_slack]
+def read_slack_channel(limit: int = 20) -> str:
+    """Read recent messages from the team's Slack channel, newest first.
+
+    Use this for team discussion, quick decisions and updates that may not be in email or docs.
+
+    Args:
+        limit: Number of recent messages to fetch (1-50).
+    """
+    channel = os.getenv("SLACK_CHANNEL_ID")
+    if not channel:
+        return _dumps({"error": "SLACK_CHANNEL_ID is not set in .env"})
+    n = max(1, min(int(limit), 50))
+    d = _data(swy_exec(SLACK_HISTORY, {"params": {"channel": channel, "limit": n}}))
+    if isinstance(d, dict) and d.get("ok") is False:
+        return _dumps({"source": "slack", "error": d.get("error")})
+    msgs = []
+    for m in (d or {}).get("messages", []):
+        if m.get("subtype") in ("channel_join", "bot_add"):
+            continue
+        ts = float(m.get("ts", 0))
+        msgs.append({
+            "user": m.get("user") or m.get("username") or m.get("bot_id"),
+            "time": datetime.fromtimestamp(ts, timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+            "text": _truncate(m.get("text", "")),
+        })
+    return _dumps({"source": "slack", "channel": channel, "results": msgs})
+
+
+TOOLS = [search_gmail, read_email, send_email,
+         search_drive, read_drive_file,
+         search_notion, read_notion_page, create_notion_page,
+         post_slack]
+# read_slack_channel is disabled: Swytchcode's Slack connection lacks the channels:history
+# scope ("missing_scope"). Add it back to TOOLS once that scope is available.
 
 
 if __name__ == "__main__":
@@ -297,3 +380,4 @@ if __name__ == "__main__":
     print(search_gmail("Orion", 3))
     print(search_drive("Orion", 3))
     print(search_notion("Orion", 3))
+
