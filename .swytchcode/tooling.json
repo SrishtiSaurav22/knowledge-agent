@@ -1,0 +1,3866 @@
+{
+  "editor": "gemini",
+  "integrations": {
+    "Gmail.gmail": {
+      "version": "v1"
+    },
+    "Google Drive.drive": {
+      "version": "v3"
+    },
+    "Notion.notion": {
+      "version": "2.0.0"
+    },
+    "Slack.slack": {
+      "version": "1.7.0"
+    }
+  },
+  "mode": "production",
+  "tools": {
+    "drive.file.export.get": {
+      "desc": "Exports a Google Workspace document to the requested MIME type and returns exported byte content. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads). Note that the exported content is limited to 10 MB.",
+      "inputs": [
+        {
+          "fields": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "prettyPrint": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "uploadType": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "key": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "quotaUser": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "$.xgafv": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "upload_protocol": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "alt": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "callback": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "access_token": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "oauth_token": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "fileId": {
+            "LOCATION": "path",
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "mimeType": {
+            "LOCATION": "query",
+            "TYPE": "STRING"
+          }
+        }
+      ],
+      "integration": "Google Drive.drive@v3",
+      "method_hash": "e28330781719ff5c10074eb3e361e46a7b4e3a5a3b6c16c90e40848808a90d31",
+      "summary": "Exports a Google Workspace document to the requested MIME type and returns exported byte content",
+      "type": "method"
+    },
+    "drive.file.get": {
+      "desc": " Gets a file's metadata or content by ID. For more information, see [Search for files and folders](https://developers.google.com/workspace/drive/api/guides/search-files). If you provide the URL parameter `alt=media`, then the response includes the file contents in the response body. Downloading content with `alt=media` only works if the file is stored in Drive. To download Google Docs, Sheets, and Slides use [`files.export`](https://developers.google.com/workspace/drive/api/reference/rest/v3/files/export) instead. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads).",
+      "inputs": [
+        {
+          "fields": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "prettyPrint": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "uploadType": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "key": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "quotaUser": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "$.xgafv": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "upload_protocol": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "alt": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "callback": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "access_token": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "oauth_token": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "fileId": {
+            "LOCATION": "path",
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "acknowledgeAbuse": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "includeLabels": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "includePermissionsForView": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "supportsAllDrives": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "supportsTeamDrives": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        }
+      ],
+      "integration": "Google Drive.drive@v3",
+      "method_hash": "80b5f03f442eb4e644cf26e09cc1362d6c23a94acd43169c347814ed7b761bbf",
+      "output": {
+        "schema": {
+          "properties": {
+            "appProperties": {
+              "required": false,
+              "type": "map[STRING]STRING"
+            },
+            "capabilities": {
+              "required": false,
+              "type": "object"
+            },
+            "clientEncryptionDetails": {
+              "properties": {
+                "decryptionMetadata": {
+                  "properties": {
+                    "aes256GcmChunkSize": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "encryptionResourceKeyHash": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "jwt": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "kaclsId": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "kaclsName": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "keyFormat": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "wrappedKey": {
+                      "required": false,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "encryptionState": {
+                  "required": false,
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "contentHints": {
+              "required": false,
+              "type": "object"
+            },
+            "contentRestrictions": {
+              "items": {
+                "properties": {
+                  "ownerRestricted": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "readOnly": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "reason": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "restrictingUser": {
+                    "properties": {
+                      "displayName": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "emailAddress": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "kind": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "me": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "permissionId": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "photoLink": {
+                        "required": false,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "restrictionTime": {
+                    "required": false,
+                    "type": "TIMESTAMP"
+                  },
+                  "systemRestricted": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "type": {
+                    "required": false,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "required": false,
+              "type": "array"
+            },
+            "copyRequiresWriterPermission": {
+              "required": false,
+              "type": "boolean"
+            },
+            "createdTime": {
+              "required": false,
+              "type": "TIMESTAMP"
+            },
+            "description": {
+              "required": false,
+              "type": "string"
+            },
+            "downloadRestrictions": {
+              "properties": {
+                "effectiveDownloadRestrictionWithContext": {
+                  "properties": {
+                    "restrictedForReaders": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "restrictedForWriters": {
+                      "required": false,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "itemDownloadRestriction": {
+                  "properties": {
+                    "restrictedForReaders": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "restrictedForWriters": {
+                      "required": false,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "driveId": {
+              "required": false,
+              "type": "string"
+            },
+            "explicitlyTrashed": {
+              "required": false,
+              "type": "boolean"
+            },
+            "exportLinks": {
+              "required": false,
+              "type": "map[STRING]STRING"
+            },
+            "fileExtension": {
+              "required": false,
+              "type": "string"
+            },
+            "folderColorRgb": {
+              "required": false,
+              "type": "string"
+            },
+            "fullFileExtension": {
+              "required": false,
+              "type": "string"
+            },
+            "hasAugmentedPermissions": {
+              "required": false,
+              "type": "boolean"
+            },
+            "hasThumbnail": {
+              "required": false,
+              "type": "boolean"
+            },
+            "headRevisionId": {
+              "required": false,
+              "type": "string"
+            },
+            "iconLink": {
+              "required": false,
+              "type": "string"
+            },
+            "id": {
+              "required": false,
+              "type": "string"
+            },
+            "imageMediaMetadata": {
+              "required": false,
+              "type": "object"
+            },
+            "inheritedPermissionsDisabled": {
+              "required": false,
+              "type": "boolean"
+            },
+            "isAppAuthorized": {
+              "required": false,
+              "type": "boolean"
+            },
+            "kind": {
+              "required": false,
+              "type": "string"
+            },
+            "labelInfo": {
+              "required": false,
+              "type": "object"
+            },
+            "lastModifyingUser": {
+              "properties": {
+                "displayName": {
+                  "required": false,
+                  "type": "string"
+                },
+                "emailAddress": {
+                  "required": false,
+                  "type": "string"
+                },
+                "kind": {
+                  "required": false,
+                  "type": "string"
+                },
+                "me": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "permissionId": {
+                  "required": false,
+                  "type": "string"
+                },
+                "photoLink": {
+                  "required": false,
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "linkShareMetadata": {
+              "required": false,
+              "type": "object"
+            },
+            "md5Checksum": {
+              "required": false,
+              "type": "string"
+            },
+            "mimeType": {
+              "required": false,
+              "type": "string"
+            },
+            "modifiedByMe": {
+              "required": false,
+              "type": "boolean"
+            },
+            "modifiedByMeTime": {
+              "required": false,
+              "type": "TIMESTAMP"
+            },
+            "modifiedTime": {
+              "required": false,
+              "type": "TIMESTAMP"
+            },
+            "name": {
+              "required": false,
+              "type": "string"
+            },
+            "originalFilename": {
+              "required": false,
+              "type": "string"
+            },
+            "ownedByMe": {
+              "required": false,
+              "type": "boolean"
+            },
+            "owners": {
+              "items": {
+                "properties": {
+                  "displayName": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "emailAddress": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "kind": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "me": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "permissionId": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "photoLink": {
+                    "required": false,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "required": false,
+              "type": "array"
+            },
+            "parents": {
+              "required": false,
+              "type": "[]STRING"
+            },
+            "permissionIds": {
+              "required": false,
+              "type": "[]STRING"
+            },
+            "permissions": {
+              "items": {
+                "properties": {
+                  "allowFileDiscovery": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "deleted": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "displayName": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "domain": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "emailAddress": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "expirationTime": {
+                    "required": false,
+                    "type": "TIMESTAMP"
+                  },
+                  "id": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "inheritedPermissionsDisabled": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "kind": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "pendingOwner": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "permissionDetails": {
+                    "required": false,
+                    "type": "[]ANY"
+                  },
+                  "photoLink": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "role": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "teamDrivePermissionDetails": {
+                    "required": false,
+                    "type": "[]ANY"
+                  },
+                  "type": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "view": {
+                    "required": false,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "required": false,
+              "type": "array"
+            },
+            "properties": {
+              "required": false,
+              "type": "map[STRING]STRING"
+            },
+            "quotaBytesUsed": {
+              "required": false,
+              "type": "string"
+            },
+            "resourceKey": {
+              "required": false,
+              "type": "string"
+            },
+            "sha1Checksum": {
+              "required": false,
+              "type": "string"
+            },
+            "sha256Checksum": {
+              "required": false,
+              "type": "string"
+            },
+            "shared": {
+              "required": false,
+              "type": "boolean"
+            },
+            "sharedWithMeTime": {
+              "required": false,
+              "type": "TIMESTAMP"
+            },
+            "sharingUser": {
+              "properties": {
+                "displayName": {
+                  "required": false,
+                  "type": "string"
+                },
+                "emailAddress": {
+                  "required": false,
+                  "type": "string"
+                },
+                "kind": {
+                  "required": false,
+                  "type": "string"
+                },
+                "me": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "permissionId": {
+                  "required": false,
+                  "type": "string"
+                },
+                "photoLink": {
+                  "required": false,
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "shortcutDetails": {
+              "required": false,
+              "type": "object"
+            },
+            "size": {
+              "required": false,
+              "type": "string"
+            },
+            "spaces": {
+              "required": false,
+              "type": "[]STRING"
+            },
+            "starred": {
+              "required": false,
+              "type": "boolean"
+            },
+            "teamDriveId": {
+              "required": false,
+              "type": "string"
+            },
+            "thumbnailLink": {
+              "required": false,
+              "type": "string"
+            },
+            "thumbnailVersion": {
+              "required": false,
+              "type": "string"
+            },
+            "trashed": {
+              "required": false,
+              "type": "boolean"
+            },
+            "trashedTime": {
+              "required": false,
+              "type": "TIMESTAMP"
+            },
+            "trashingUser": {
+              "properties": {
+                "displayName": {
+                  "required": false,
+                  "type": "string"
+                },
+                "emailAddress": {
+                  "required": false,
+                  "type": "string"
+                },
+                "kind": {
+                  "required": false,
+                  "type": "string"
+                },
+                "me": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "permissionId": {
+                  "required": false,
+                  "type": "string"
+                },
+                "photoLink": {
+                  "required": false,
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "version": {
+              "required": false,
+              "type": "string"
+            },
+            "videoMediaMetadata": {
+              "required": false,
+              "type": "object"
+            },
+            "viewedByMe": {
+              "required": false,
+              "type": "boolean"
+            },
+            "viewedByMeTime": {
+              "required": false,
+              "type": "TIMESTAMP"
+            },
+            "viewersCanCopyContent": {
+              "required": false,
+              "type": "boolean"
+            },
+            "webContentLink": {
+              "required": false,
+              "type": "string"
+            },
+            "webViewLink": {
+              "required": false,
+              "type": "string"
+            },
+            "writersCanShare": {
+              "required": false,
+              "type": "boolean"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": " Gets a file's metadata or content by ID",
+      "type": "method"
+    },
+    "drive.file.list": {
+      "desc": " Lists the user's files. For more information, see [Search for files and folders](https://developers.google.com/workspace/drive/api/guides/search-files). This method accepts the `q` parameter, which is a search query combining one or more search terms. This method returns *all* files by default, including trashed files. If you don't want trashed files to appear in the list, use the `trashed=false` query parameter to remove trashed files from the results.",
+      "inputs": [
+        {
+          "fields": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "prettyPrint": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "uploadType": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "key": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "quotaUser": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "$.xgafv": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "upload_protocol": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "alt": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "callback": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "access_token": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "oauth_token": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "corpora": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "corpus": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "driveId": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "includeItemsFromAllDrives": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "includeLabels": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "includePermissionsForView": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "includeTeamDriveItems": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "orderBy": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "pageSize": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "INT"
+          }
+        },
+        {
+          "pageToken": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "q": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "spaces": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "supportsAllDrives": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "supportsTeamDrives": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "teamDriveId": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        }
+      ],
+      "integration": "Google Drive.drive@v3",
+      "method_hash": "f54d7f394ea253de4de333514026c277b0263729266edd977a1dde434c92c6e7",
+      "output": {
+        "schema": {
+          "properties": {
+            "files": {
+              "items": {
+                "properties": {
+                  "appProperties": {
+                    "required": false,
+                    "type": "map[STRING]STRING"
+                  },
+                  "capabilities": {
+                    "required": false,
+                    "type": "object"
+                  },
+                  "clientEncryptionDetails": {
+                    "properties": {
+                      "decryptionMetadata": {
+                        "properties": {
+                          "aes256GcmChunkSize": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "encryptionResourceKeyHash": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "jwt": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "kaclsId": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "kaclsName": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "keyFormat": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "wrappedKey": {
+                            "required": false,
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "encryptionState": {
+                        "required": false,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "contentHints": {
+                    "required": false,
+                    "type": "object"
+                  },
+                  "contentRestrictions": {
+                    "items": {
+                      "properties": {
+                        "ownerRestricted": {
+                          "required": false,
+                          "type": "boolean"
+                        },
+                        "readOnly": {
+                          "required": false,
+                          "type": "boolean"
+                        },
+                        "reason": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "restrictingUser": {
+                          "properties": {
+                            "displayName": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "emailAddress": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "kind": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "me": {
+                              "required": false,
+                              "type": "boolean"
+                            },
+                            "permissionId": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "photoLink": {
+                              "required": false,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "restrictionTime": {
+                          "required": false,
+                          "type": "TIMESTAMP"
+                        },
+                        "systemRestricted": {
+                          "required": false,
+                          "type": "boolean"
+                        },
+                        "type": {
+                          "required": false,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "required": false,
+                    "type": "array"
+                  },
+                  "copyRequiresWriterPermission": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "createdTime": {
+                    "required": false,
+                    "type": "TIMESTAMP"
+                  },
+                  "description": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "downloadRestrictions": {
+                    "properties": {
+                      "effectiveDownloadRestrictionWithContext": {
+                        "properties": {
+                          "restrictedForReaders": {
+                            "required": false,
+                            "type": "boolean"
+                          },
+                          "restrictedForWriters": {
+                            "required": false,
+                            "type": "boolean"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "itemDownloadRestriction": {
+                        "properties": {
+                          "restrictedForReaders": {
+                            "required": false,
+                            "type": "boolean"
+                          },
+                          "restrictedForWriters": {
+                            "required": false,
+                            "type": "boolean"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "driveId": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "explicitlyTrashed": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "exportLinks": {
+                    "required": false,
+                    "type": "map[STRING]STRING"
+                  },
+                  "fileExtension": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "folderColorRgb": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "fullFileExtension": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "hasAugmentedPermissions": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "hasThumbnail": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "headRevisionId": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "iconLink": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "id": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "imageMediaMetadata": {
+                    "required": false,
+                    "type": "object"
+                  },
+                  "inheritedPermissionsDisabled": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "isAppAuthorized": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "kind": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "labelInfo": {
+                    "required": false,
+                    "type": "object"
+                  },
+                  "lastModifyingUser": {
+                    "properties": {
+                      "displayName": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "emailAddress": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "kind": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "me": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "permissionId": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "photoLink": {
+                        "required": false,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "linkShareMetadata": {
+                    "required": false,
+                    "type": "object"
+                  },
+                  "md5Checksum": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "mimeType": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "modifiedByMe": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "modifiedByMeTime": {
+                    "required": false,
+                    "type": "TIMESTAMP"
+                  },
+                  "modifiedTime": {
+                    "required": false,
+                    "type": "TIMESTAMP"
+                  },
+                  "name": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "originalFilename": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "ownedByMe": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "owners": {
+                    "items": {
+                      "properties": {
+                        "displayName": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "emailAddress": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "kind": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "me": {
+                          "required": false,
+                          "type": "boolean"
+                        },
+                        "permissionId": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "photoLink": {
+                          "required": false,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "required": false,
+                    "type": "array"
+                  },
+                  "parents": {
+                    "required": false,
+                    "type": "[]STRING"
+                  },
+                  "permissionIds": {
+                    "required": false,
+                    "type": "[]STRING"
+                  },
+                  "permissions": {
+                    "items": {
+                      "properties": {
+                        "allowFileDiscovery": {
+                          "required": false,
+                          "type": "boolean"
+                        },
+                        "deleted": {
+                          "required": false,
+                          "type": "boolean"
+                        },
+                        "displayName": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "domain": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "emailAddress": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "expirationTime": {
+                          "required": false,
+                          "type": "TIMESTAMP"
+                        },
+                        "id": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "inheritedPermissionsDisabled": {
+                          "required": false,
+                          "type": "boolean"
+                        },
+                        "kind": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "pendingOwner": {
+                          "required": false,
+                          "type": "boolean"
+                        },
+                        "permissionDetails": {
+                          "required": false,
+                          "type": "[]ANY"
+                        },
+                        "photoLink": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "role": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "teamDrivePermissionDetails": {
+                          "required": false,
+                          "type": "[]ANY"
+                        },
+                        "type": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "view": {
+                          "required": false,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "required": false,
+                    "type": "array"
+                  },
+                  "properties": {
+                    "required": false,
+                    "type": "map[STRING]STRING"
+                  },
+                  "quotaBytesUsed": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "resourceKey": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "sha1Checksum": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "sha256Checksum": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "shared": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "sharedWithMeTime": {
+                    "required": false,
+                    "type": "TIMESTAMP"
+                  },
+                  "sharingUser": {
+                    "properties": {
+                      "displayName": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "emailAddress": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "kind": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "me": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "permissionId": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "photoLink": {
+                        "required": false,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "shortcutDetails": {
+                    "required": false,
+                    "type": "object"
+                  },
+                  "size": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "spaces": {
+                    "required": false,
+                    "type": "[]STRING"
+                  },
+                  "starred": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "teamDriveId": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "thumbnailLink": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "thumbnailVersion": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "trashed": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "trashedTime": {
+                    "required": false,
+                    "type": "TIMESTAMP"
+                  },
+                  "trashingUser": {
+                    "properties": {
+                      "displayName": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "emailAddress": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "kind": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "me": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "permissionId": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "photoLink": {
+                        "required": false,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "version": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "videoMediaMetadata": {
+                    "required": false,
+                    "type": "object"
+                  },
+                  "viewedByMe": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "viewedByMeTime": {
+                    "required": false,
+                    "type": "TIMESTAMP"
+                  },
+                  "viewersCanCopyContent": {
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  "webContentLink": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "webViewLink": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "writersCanShare": {
+                    "required": false,
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "required": false,
+              "type": "array"
+            },
+            "incompleteSearch": {
+              "required": false,
+              "type": "boolean"
+            },
+            "kind": {
+              "required": false,
+              "type": "string"
+            },
+            "nextPageToken": {
+              "required": false,
+              "type": "string"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": " Lists the user's files",
+      "type": "method"
+    },
+    "gmail.user.messages.get": {
+      "desc": "Lists the messages in the user's mailbox. For more information, see [List Gmail messages](https://developers.google.com/workspace/gmail/api/guides/list-messages).",
+      "inputs": [
+        {
+          "userId": {
+            "DEFAULT": "me",
+            "LOCATION": "path",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "includeSpamTrash": {
+            "DEFAULT": false,
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "labelIds": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "STYLE": "multi",
+            "TYPE": "[]ANY"
+          }
+        },
+        {
+          "maxResults": {
+            "DEFAULT": 100,
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "INT"
+          }
+        },
+        {
+          "pageToken": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "q": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        }
+      ],
+      "integration": "Gmail.gmail@v1",
+      "method_hash": "f909aef13452d7d50204c6ab45007980125f53646d15f2eb3e4802838829dac1",
+      "output": {
+        "schema": {
+          "properties": {
+            "messages": {
+              "items": {
+                "properties": {
+                  "classificationLabelValues": {
+                    "items": {
+                      "properties": {
+                        "fields": {
+                          "items": {
+                            "properties": {
+                              "fieldId": {
+                                "required": false,
+                                "type": "string"
+                              },
+                              "selection": {
+                                "required": false,
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "required": false,
+                          "type": "array"
+                        },
+                        "labelId": {
+                          "required": false,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "required": false,
+                    "type": "array"
+                  },
+                  "historyId": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "id": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "internalDate": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "labelIds": {
+                    "required": false,
+                    "type": "[]STRING"
+                  },
+                  "payload": {
+                    "properties": {
+                      "body": {
+                        "properties": {
+                          "attachmentId": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "data": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "size": {
+                            "required": false,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "filename": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "headers": {
+                        "items": {
+                          "properties": {
+                            "name": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "value": {
+                              "required": false,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "required": false,
+                        "type": "array"
+                      },
+                      "mimeType": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "partId": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "parts": {
+                        "items": {
+                          "properties": {},
+                          "type": "object"
+                        },
+                        "required": false,
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "raw": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "sizeEstimate": {
+                    "required": false,
+                    "type": "integer"
+                  },
+                  "snippet": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "threadId": {
+                    "required": false,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "required": false,
+              "type": "array"
+            },
+            "nextPageToken": {
+              "required": false,
+              "type": "string"
+            },
+            "resultSizeEstimate": {
+              "required": false,
+              "type": "integer"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": "Lists the messages in the user's mailbox",
+      "type": "method"
+    },
+    "gmail.user.messages.get1": {
+      "desc": "Gets the specified message.",
+      "inputs": [
+        {
+          "userId": {
+            "DEFAULT": "me",
+            "LOCATION": "path",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "id": {
+            "LOCATION": "path",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "format": {
+            "DEFAULT": "full",
+            "ENUM": [
+              "minimal",
+              "full",
+              "raw",
+              "metadata"
+            ],
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "metadataHeaders": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "STYLE": "multi",
+            "TYPE": "[]ANY"
+          }
+        }
+      ],
+      "integration": "Gmail.gmail@v1",
+      "method_hash": "132ef154818bab5f6ffd60794d6db6602e5b42d131f8fcbfce6bebade2e0a7c8",
+      "output": {
+        "schema": {
+          "properties": {
+            "classificationLabelValues": {
+              "items": {
+                "properties": {
+                  "fields": {
+                    "items": {
+                      "properties": {
+                        "fieldId": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "selection": {
+                          "required": false,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "required": false,
+                    "type": "array"
+                  },
+                  "labelId": {
+                    "required": false,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "required": false,
+              "type": "array"
+            },
+            "historyId": {
+              "required": false,
+              "type": "string"
+            },
+            "id": {
+              "required": false,
+              "type": "string"
+            },
+            "internalDate": {
+              "required": false,
+              "type": "string"
+            },
+            "labelIds": {
+              "required": false,
+              "type": "[]STRING"
+            },
+            "payload": {
+              "properties": {
+                "body": {
+                  "properties": {
+                    "attachmentId": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "data": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "size": {
+                      "required": false,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "filename": {
+                  "required": false,
+                  "type": "string"
+                },
+                "headers": {
+                  "items": {
+                    "properties": {
+                      "name": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "value": {
+                        "required": false,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "required": false,
+                  "type": "array"
+                },
+                "mimeType": {
+                  "required": false,
+                  "type": "string"
+                },
+                "partId": {
+                  "required": false,
+                  "type": "string"
+                },
+                "parts": {
+                  "items": {
+                    "properties": {},
+                    "type": "object"
+                  },
+                  "required": false,
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "raw": {
+              "required": false,
+              "type": "string"
+            },
+            "sizeEstimate": {
+              "required": false,
+              "type": "integer"
+            },
+            "snippet": {
+              "required": false,
+              "type": "string"
+            },
+            "threadId": {
+              "required": false,
+              "type": "string"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": "Gets the specified message.",
+      "type": "method"
+    },
+    "gmail.user.threads.get": {
+      "desc": "Lists the threads in the user's mailbox. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
+      "inputs": [
+        {
+          "userId": {
+            "DEFAULT": "me",
+            "LOCATION": "path",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "includeSpamTrash": {
+            "DEFAULT": false,
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "labelIds": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "STYLE": "multi",
+            "TYPE": "[]ANY"
+          }
+        },
+        {
+          "maxResults": {
+            "DEFAULT": 100,
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "INT"
+          }
+        },
+        {
+          "pageToken": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "q": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        }
+      ],
+      "integration": "Gmail.gmail@v1",
+      "method_hash": "73472a1fb961f6ef73fbc9c30f0590716cf0f25ddabc347d0847977416c12df2",
+      "output": {
+        "schema": {
+          "properties": {
+            "nextPageToken": {
+              "required": false,
+              "type": "string"
+            },
+            "resultSizeEstimate": {
+              "required": false,
+              "type": "integer"
+            },
+            "threads": {
+              "items": {
+                "properties": {
+                  "historyId": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "id": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "messages": {
+                    "items": {
+                      "properties": {
+                        "classificationLabelValues": {
+                          "items": {
+                            "properties": {
+                              "fields": {
+                                "items": {
+                                  "properties": {
+                                    "fieldId": {
+                                      "required": false,
+                                      "type": "string"
+                                    },
+                                    "selection": {
+                                      "required": false,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "required": false,
+                                "type": "array"
+                              },
+                              "labelId": {
+                                "required": false,
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "required": false,
+                          "type": "array"
+                        },
+                        "historyId": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "id": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "internalDate": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "labelIds": {
+                          "required": false,
+                          "type": "[]STRING"
+                        },
+                        "payload": {
+                          "properties": {
+                            "body": {
+                              "properties": {
+                                "attachmentId": {
+                                  "required": false,
+                                  "type": "string"
+                                },
+                                "data": {
+                                  "required": false,
+                                  "type": "string"
+                                },
+                                "size": {
+                                  "required": false,
+                                  "type": "integer"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "filename": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "headers": {
+                              "items": {
+                                "properties": {
+                                  "name": {
+                                    "required": false,
+                                    "type": "string"
+                                  },
+                                  "value": {
+                                    "required": false,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "required": false,
+                              "type": "array"
+                            },
+                            "mimeType": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "partId": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "parts": {
+                              "items": {
+                                "properties": {},
+                                "type": "object"
+                              },
+                              "required": false,
+                              "type": "array"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "raw": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "sizeEstimate": {
+                          "required": false,
+                          "type": "integer"
+                        },
+                        "snippet": {
+                          "required": false,
+                          "type": "string"
+                        },
+                        "threadId": {
+                          "required": false,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "required": false,
+                    "type": "array"
+                  },
+                  "snippet": {
+                    "required": false,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "required": false,
+              "type": "array"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": "Lists the threads in the user's mailbox",
+      "type": "method"
+    },
+    "gmail.user.threads.get1": {
+      "desc": "Gets the specified thread. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).",
+      "inputs": [
+        {
+          "userId": {
+            "DEFAULT": "me",
+            "LOCATION": "path",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "id": {
+            "LOCATION": "path",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "format": {
+            "DEFAULT": "full",
+            "ENUM": [
+              "full",
+              "metadata",
+              "minimal"
+            ],
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "metadataHeaders": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "STYLE": "multi",
+            "TYPE": "[]ANY"
+          }
+        }
+      ],
+      "integration": "Gmail.gmail@v1",
+      "method_hash": "a41229a92c33d597d733a1d6dc837ea83b31565cabca93c79ad6d1e8cfbf1941",
+      "output": {
+        "schema": {
+          "properties": {
+            "historyId": {
+              "required": false,
+              "type": "string"
+            },
+            "id": {
+              "required": false,
+              "type": "string"
+            },
+            "messages": {
+              "items": {
+                "properties": {
+                  "classificationLabelValues": {
+                    "items": {
+                      "properties": {
+                        "fields": {
+                          "items": {
+                            "properties": {
+                              "fieldId": {
+                                "required": false,
+                                "type": "string"
+                              },
+                              "selection": {
+                                "required": false,
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "required": false,
+                          "type": "array"
+                        },
+                        "labelId": {
+                          "required": false,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "required": false,
+                    "type": "array"
+                  },
+                  "historyId": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "id": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "internalDate": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "labelIds": {
+                    "required": false,
+                    "type": "[]STRING"
+                  },
+                  "payload": {
+                    "properties": {
+                      "body": {
+                        "properties": {
+                          "attachmentId": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "data": {
+                            "required": false,
+                            "type": "string"
+                          },
+                          "size": {
+                            "required": false,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "filename": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "headers": {
+                        "items": {
+                          "properties": {
+                            "name": {
+                              "required": false,
+                              "type": "string"
+                            },
+                            "value": {
+                              "required": false,
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "required": false,
+                        "type": "array"
+                      },
+                      "mimeType": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "partId": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "parts": {
+                        "items": {
+                          "properties": {},
+                          "type": "object"
+                        },
+                        "required": false,
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "raw": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "sizeEstimate": {
+                    "required": false,
+                    "type": "integer"
+                  },
+                  "snippet": {
+                    "required": false,
+                    "type": "string"
+                  },
+                  "threadId": {
+                    "required": false,
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "required": false,
+              "type": "array"
+            },
+            "snippet": {
+              "required": false,
+              "type": "string"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": "Gets the specified thread",
+      "type": "method"
+    },
+    "notion.children.get": {
+      "desc": "",
+      "inputs": [
+        {
+          "block_id": {
+            "LOCATION": "path",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "start_cursor": {
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "page_size": {
+            "DEFAULT": 100,
+            "FORMAT": "int32",
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "INT"
+          }
+        },
+        {
+          "Notion-Version": {
+            "DEFAULT": "2025-09-03",
+            "LOCATION": "header",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        }
+      ],
+      "integration": "Notion.notion@2.0.0",
+      "method_hash": "89712d57739f49f4184e4283b4e77ed25122a5d30eeb3de250386ff5d25206d5",
+      "output": {
+        "schema": {
+          "properties": {
+            "value": {
+              "required": false,
+              "type": "any"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": "Retrieve block children",
+      "type": "method"
+    },
+    "notion.markdown.get": {
+      "desc": "Retrieve the full content of a Notion page rendered as enhanced Markdown. Designed for agentic and developer tools that work natively with Markdown instead of the block JSON returned by Retrieve block children.",
+      "inputs": [
+        {
+          "page_id": {
+            "FORMAT": "uuid",
+            "LOCATION": "path",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "include_transcript": {
+            "DEFAULT": false,
+            "LOCATION": "query",
+            "REQUIRED": false,
+            "TYPE": "BOOL"
+          }
+        },
+        {
+          "Notion-Version": {
+            "DEFAULT": "2026-03-11",
+            "LOCATION": "header",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        }
+      ],
+      "integration": "Notion.notion@2.0.0",
+      "method_hash": "2df0fd1534658c0205e98550c6eee03b470e32d30a9e787f38c0d3cf2b4c0ec1",
+      "output": {
+        "schema": {
+          "properties": {
+            "id": {
+              "required": false,
+              "type": "string"
+            },
+            "markdown": {
+              "required": false,
+              "type": "string"
+            },
+            "object": {
+              "required": false,
+              "type": "string"
+            },
+            "truncated": {
+              "required": false,
+              "type": "boolean"
+            },
+            "unknown_block_ids": {
+              "required": false,
+              "type": "[]STRING"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": "Retrieve a page as Markdown",
+      "type": "method"
+    },
+    "notion.page.create": {
+      "desc": "",
+      "inputs": [
+        {
+          "Notion-Version": {
+            "DEFAULT": "2025-09-03",
+            "LOCATION": "header",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "body": {
+            "CONTENT_TYPE": "application/json",
+            "LOCATION": "body",
+            "REQUIRED": false,
+            "TYPE": "OBJECT",
+            "schema": {
+              "properties": {
+                "children": {
+                  "required": false,
+                  "type": "[]STRING"
+                },
+                "cover": {
+                  "required": false,
+                  "type": "string"
+                },
+                "icon": {
+                  "required": false,
+                  "type": "string"
+                },
+                "parent": {
+                  "properties": {
+                    "_COMPOSITION": {
+                      "required": false,
+                      "type": "ONE_OF"
+                    },
+                    "variant_2": {
+                      "properties": {
+                        "type": {
+                          "required": true,
+                          "type": "any"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ],
+                      "type": "object"
+                    },
+                    "variant_dataSourceIdParentRequest": {
+                      "properties": {
+                        "database_id": {
+                          "required": true,
+                          "type": "string"
+                        },
+                        "type": {
+                          "required": false,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "database_id"
+                      ],
+                      "type": "object"
+                    },
+                    "variant_pageIdParentRequest": {
+                      "properties": {
+                        "page_id": {
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "page_id"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "properties": {
+                  "required": true,
+                  "type": "map[STRING]ANY"
+                }
+              },
+              "required": [
+                "parent",
+                "properties"
+              ]
+            }
+          }
+        }
+      ],
+      "integration": "Notion.notion@2.0.0",
+      "method_hash": "76323194220d5fe7b92ac67d425a8e7de239b2178cb23019ff53228cff674770",
+      "output": {
+        "schema": {
+          "properties": {
+            "value": {
+              "required": false,
+              "type": "any"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": "Create a page",
+      "type": "method"
+    },
+    "notion.search.create": {
+      "desc": "",
+      "inputs": [
+        {
+          "Notion-Version": {
+            "DEFAULT": "2025-09-03",
+            "LOCATION": "header",
+            "REQUIRED": false,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "body": {
+            "CONTENT_TYPE": "application/json",
+            "LOCATION": "body",
+            "REQUIRED": false,
+            "TYPE": "OBJECT",
+            "schema": {
+              "properties": {
+                "filter": {
+                  "properties": {
+                    "property": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "value": {
+                      "required": false,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "page_size": {
+                  "required": false,
+                  "type": "integer"
+                },
+                "query": {
+                  "required": false,
+                  "type": "string"
+                },
+                "sort": {
+                  "properties": {
+                    "direction": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "required": false,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "start_cursor": {
+                  "required": false,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "integration": "Notion.notion@2.0.0",
+      "method_hash": "e8929ab37ae8a83acbf8b3b91465ba2a05fa1552bd867ba873d6372dcd1e244f",
+      "output": {
+        "schema": {
+          "properties": {
+            "value": {
+              "required": false,
+              "type": "any"
+            }
+          }
+        },
+        "status": 200
+      },
+      "summary": "Search by title",
+      "type": "method"
+    },
+    "slack.chat.postmessage.create": {
+      "desc": "Sends a message to a channel.",
+      "inputs": [
+        {
+          "token": {
+            "LOCATION": "header",
+            "REQUIRED": true,
+            "TYPE": "STRING"
+          }
+        },
+        {
+          "body": {
+            "LOCATION": "body",
+            "REQUIRED": true,
+            "TYPE": "OBJECT",
+            "schema": {
+              "properties": {
+                "as_user": {
+                  "required": false,
+                  "type": "string"
+                },
+                "attachments": {
+                  "required": false,
+                  "type": "string"
+                },
+                "blocks": {
+                  "required": false,
+                  "type": "string"
+                },
+                "channel": {
+                  "required": true,
+                  "type": "string"
+                },
+                "icon_emoji": {
+                  "required": false,
+                  "type": "string"
+                },
+                "icon_url": {
+                  "required": false,
+                  "type": "string"
+                },
+                "link_names": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "mrkdwn": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "parse": {
+                  "required": false,
+                  "type": "string"
+                },
+                "reply_broadcast": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "text": {
+                  "required": false,
+                  "type": "string"
+                },
+                "thread_ts": {
+                  "required": false,
+                  "type": "string"
+                },
+                "unfurl_links": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "unfurl_media": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "username": {
+                  "required": false,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "channel"
+              ]
+            }
+          }
+        }
+      ],
+      "integration": "Slack.slack@1.7.0",
+      "method_hash": "d53342edb87b52dfa401ee6022a1729b6c8c55f9ded49a57bc932aa34a6aec3a",
+      "output": {
+        "schema": {
+          "properties": {
+            "channel": {
+              "required": true,
+              "type": "string"
+            },
+            "message": {
+              "properties": {
+                "attachments": {
+                  "items": {
+                    "properties": {
+                      "fallback": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "id": {
+                        "required": true,
+                        "type": "integer"
+                      },
+                      "image_bytes": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "image_height": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "image_url": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "image_width": {
+                        "required": false,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "id"
+                    ],
+                    "type": "object"
+                  },
+                  "required": false,
+                  "type": "array"
+                },
+                "blocks": {
+                  "items": {
+                    "properties": {
+                      "type": {
+                        "required": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ],
+                    "type": "object"
+                  },
+                  "required": false,
+                  "type": "array"
+                },
+                "bot_id": {
+                  "required": false,
+                  "type": "any"
+                },
+                "bot_profile": {
+                  "properties": {
+                    "app_id": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "deleted": {
+                      "required": true,
+                      "type": "boolean"
+                    },
+                    "icons": {
+                      "properties": {
+                        "image_36": {
+                          "required": true,
+                          "type": "string"
+                        },
+                        "image_48": {
+                          "required": true,
+                          "type": "string"
+                        },
+                        "image_72": {
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "image_36",
+                        "image_48",
+                        "image_72"
+                      ],
+                      "type": "object"
+                    },
+                    "id": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "name": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "team_id": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "updated": {
+                      "required": true,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "app_id",
+                    "deleted",
+                    "icons",
+                    "id",
+                    "name",
+                    "team_id",
+                    "updated"
+                  ],
+                  "type": "object"
+                },
+                "client_msg_id": {
+                  "required": false,
+                  "type": "string"
+                },
+                "comment": {
+                  "properties": {
+                    "comment": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "created": {
+                      "required": true,
+                      "type": "integer"
+                    },
+                    "id": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "is_intro": {
+                      "required": true,
+                      "type": "boolean"
+                    },
+                    "is_starred": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "num_stars": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "pinned_info": {
+                      "properties": {
+                        "value": {
+                          "required": false,
+                          "type": "any"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "pinned_to": {
+                      "required": false,
+                      "type": "[]STRING"
+                    },
+                    "reactions": {
+                      "items": {
+                        "properties": {
+                          "count": {
+                            "required": true,
+                            "type": "integer"
+                          },
+                          "name": {
+                            "required": true,
+                            "type": "string"
+                          },
+                          "users": {
+                            "required": true,
+                            "type": "[]STRING"
+                          }
+                        },
+                        "required": [
+                          "count",
+                          "name",
+                          "users"
+                        ],
+                        "type": "object"
+                      },
+                      "required": false,
+                      "type": "array"
+                    },
+                    "timestamp": {
+                      "required": true,
+                      "type": "integer"
+                    },
+                    "user": {
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "comment",
+                    "created",
+                    "id",
+                    "is_intro",
+                    "timestamp",
+                    "user"
+                  ],
+                  "type": "object"
+                },
+                "display_as_bot": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "file": {
+                  "properties": {
+                    "channels": {
+                      "required": false,
+                      "type": "[]STRING"
+                    },
+                    "comments_count": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "created": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "date_delete": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "display_as_bot": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "editable": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "editor": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "external_id": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "external_type": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "external_url": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "filetype": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "groups": {
+                      "required": false,
+                      "type": "[]STRING"
+                    },
+                    "has_rich_preview": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "id": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "image_exif_rotation": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "ims": {
+                      "required": false,
+                      "type": "[]STRING"
+                    },
+                    "is_external": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "is_public": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "is_starred": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "is_tombstoned": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "last_editor": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "mimetype": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "mode": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "name": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "non_owner_editable": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "num_stars": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "original_h": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "original_w": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "permalink": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "permalink_public": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "pinned_info": {
+                      "properties": {
+                        "value": {
+                          "required": false,
+                          "type": "any"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "pinned_to": {
+                      "required": false,
+                      "type": "[]STRING"
+                    },
+                    "pretty_type": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "preview": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "public_url_shared": {
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    "reactions": {
+                      "items": {
+                        "properties": {
+                          "count": {
+                            "required": true,
+                            "type": "integer"
+                          },
+                          "name": {
+                            "required": true,
+                            "type": "string"
+                          },
+                          "users": {
+                            "required": true,
+                            "type": "[]STRING"
+                          }
+                        },
+                        "required": [
+                          "count",
+                          "name",
+                          "users"
+                        ],
+                        "type": "object"
+                      },
+                      "required": false,
+                      "type": "array"
+                    },
+                    "shares": {
+                      "properties": {
+                        "private": {
+                          "required": false,
+                          "type": "any"
+                        },
+                        "public": {
+                          "required": false,
+                          "type": "any"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "size": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "source_team": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "state": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_1024": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_1024_h": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_1024_w": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_160": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_360": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_360_h": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_360_w": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_480": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_480_h": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_480_w": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_64": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_720": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_720_h": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_720_w": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_80": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_800": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_800_h": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_800_w": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_960": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "thumb_960_h": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_960_w": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "thumb_tiny": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "title": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "updated": {
+                      "required": false,
+                      "type": "integer"
+                    },
+                    "url_private": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "url_private_download": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "user": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "user_team": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "username": {
+                      "required": false,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "files": {
+                  "items": {
+                    "properties": {
+                      "channels": {
+                        "required": false,
+                        "type": "[]STRING"
+                      },
+                      "comments_count": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "created": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "date_delete": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "display_as_bot": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "editable": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "editor": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "external_id": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "external_type": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "external_url": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "filetype": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "groups": {
+                        "required": false,
+                        "type": "[]STRING"
+                      },
+                      "has_rich_preview": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "image_exif_rotation": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "ims": {
+                        "required": false,
+                        "type": "[]STRING"
+                      },
+                      "is_external": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "is_public": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "is_starred": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "is_tombstoned": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "last_editor": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "mimetype": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "mode": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "name": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "non_owner_editable": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "num_stars": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "original_h": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "original_w": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "permalink": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "permalink_public": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "pinned_info": {
+                        "properties": {
+                          "value": {
+                            "required": false,
+                            "type": "any"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "pinned_to": {
+                        "required": false,
+                        "type": "[]STRING"
+                      },
+                      "pretty_type": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "preview": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "public_url_shared": {
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      "reactions": {
+                        "items": {
+                          "properties": {
+                            "count": {
+                              "required": true,
+                              "type": "integer"
+                            },
+                            "name": {
+                              "required": true,
+                              "type": "string"
+                            },
+                            "users": {
+                              "required": true,
+                              "type": "[]STRING"
+                            }
+                          },
+                          "required": [
+                            "count",
+                            "name",
+                            "users"
+                          ],
+                          "type": "object"
+                        },
+                        "required": false,
+                        "type": "array"
+                      },
+                      "shares": {
+                        "properties": {
+                          "private": {
+                            "required": false,
+                            "type": "any"
+                          },
+                          "public": {
+                            "required": false,
+                            "type": "any"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "size": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "source_team": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "state": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_1024": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_1024_h": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_1024_w": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_160": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_360": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_360_h": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_360_w": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_480": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_480_h": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_480_w": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_64": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_720": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_720_h": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_720_w": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_80": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_800": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_800_h": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_800_w": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_960": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "thumb_960_h": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_960_w": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "thumb_tiny": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "timestamp": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "title": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "updated": {
+                        "required": false,
+                        "type": "integer"
+                      },
+                      "url_private": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "url_private_download": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "user": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "user_team": {
+                        "required": false,
+                        "type": "string"
+                      },
+                      "username": {
+                        "required": false,
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "required": false,
+                  "type": "array"
+                },
+                "icons": {
+                  "properties": {
+                    "emoji": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "image_64": {
+                      "required": false,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "inviter": {
+                  "required": false,
+                  "type": "string"
+                },
+                "is_delayed_message": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "is_intro": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "is_starred": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "last_read": {
+                  "required": false,
+                  "type": "string"
+                },
+                "latest_reply": {
+                  "required": false,
+                  "type": "string"
+                },
+                "name": {
+                  "required": false,
+                  "type": "string"
+                },
+                "old_name": {
+                  "required": false,
+                  "type": "string"
+                },
+                "parent_user_id": {
+                  "required": false,
+                  "type": "string"
+                },
+                "permalink": {
+                  "required": false,
+                  "type": "string"
+                },
+                "pinned_to": {
+                  "required": false,
+                  "type": "[]STRING"
+                },
+                "purpose": {
+                  "required": false,
+                  "type": "string"
+                },
+                "reactions": {
+                  "items": {
+                    "properties": {
+                      "count": {
+                        "required": true,
+                        "type": "integer"
+                      },
+                      "name": {
+                        "required": true,
+                        "type": "string"
+                      },
+                      "users": {
+                        "required": true,
+                        "type": "[]STRING"
+                      }
+                    },
+                    "required": [
+                      "count",
+                      "name",
+                      "users"
+                    ],
+                    "type": "object"
+                  },
+                  "required": false,
+                  "type": "array"
+                },
+                "reply_count": {
+                  "required": false,
+                  "type": "integer"
+                },
+                "reply_users": {
+                  "required": false,
+                  "type": "[]STRING"
+                },
+                "reply_users_count": {
+                  "required": false,
+                  "type": "integer"
+                },
+                "source_team": {
+                  "required": false,
+                  "type": "string"
+                },
+                "subscribed": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "subtype": {
+                  "required": false,
+                  "type": "string"
+                },
+                "team": {
+                  "required": false,
+                  "type": "string"
+                },
+                "text": {
+                  "required": true,
+                  "type": "string"
+                },
+                "thread_ts": {
+                  "required": false,
+                  "type": "string"
+                },
+                "topic": {
+                  "required": false,
+                  "type": "string"
+                },
+                "ts": {
+                  "required": true,
+                  "type": "string"
+                },
+                "type": {
+                  "required": true,
+                  "type": "string"
+                },
+                "unread_count": {
+                  "required": false,
+                  "type": "integer"
+                },
+                "upload": {
+                  "required": false,
+                  "type": "boolean"
+                },
+                "user": {
+                  "required": false,
+                  "type": "string"
+                },
+                "user_profile": {
+                  "properties": {
+                    "avatar_hash": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "display_name": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "display_name_normalized": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "first_name": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "image_72": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "is_restricted": {
+                      "required": true,
+                      "type": "boolean"
+                    },
+                    "is_ultra_restricted": {
+                      "required": true,
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "real_name": {
+                      "required": true,
+                      "type": "string"
+                    },
+                    "real_name_normalized": {
+                      "required": false,
+                      "type": "string"
+                    },
+                    "team": {
+                      "required": true,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "avatar_hash",
+                    "display_name",
+                    "first_name",
+                    "image_72",
+                    "is_restricted",
+                    "is_ultra_restricted",
+                    "name",
+                    "real_name",
+                    "team"
+                  ],
+                  "type": "object"
+                },
+                "user_team": {
+                  "required": false,
+                  "type": "string"
+                },
+                "username": {
+                  "required": false,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text",
+                "ts",
+                "type"
+              ],
+              "type": "object"
+            },
+            "ok": {
+              "required": true,
+              "type": "boolean"
+            },
+            "ts": {
+              "required": true,
+              "type": "string"
+            }
+          },
+          "required": [
+            "channel",
+            "message",
+            "ok",
+            "ts"
+          ]
+        },
+        "status": 200
+      },
+      "summary": "Sends a message to a channel.",
+      "type": "method"
+    }
+  },
+  "version": "2.23.7",
+  "workspace": "knowledge-agent"
+}

@@ -1,0 +1,579 @@
+{
+  "methods": [
+    {
+      "method_uuid": "",
+      "method_name": "Add a comment to a specific file",
+      "canonical_id": "drive.file.comments.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add a comment to a specific file",
+      "canonical_id": "drive.file.comments.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add or update file permissions",
+      "canonical_id": "drive.file.permissions.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Approve a file approval",
+      "canonical_id": "drive.file.approvalIdapprove.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Approve or deny a file access proposal",
+      "canonical_id": "drive.file.proposalIdresolve.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Cancel a file approval",
+      "canonical_id": "drive.file.approvalIdcancel.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Comment on a file approval",
+      "canonical_id": "drive.file.approvalIdcomment.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Copy a file and apply updates",
+      "canonical_id": "drive.file.copy.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Copy a file with specified settings",
+      "canonical_id": "drive.file.copy.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new file",
+      "canonical_id": "drive.file.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new shared drive",
+      "canonical_id": "drive.drive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new shared drive",
+      "canonical_id": "drive.drive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new shared drive",
+      "canonical_id": "drive.teamdrive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new team drive",
+      "canonical_id": "drive.teamdrive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a reply to a comment on a file",
+      "canonical_id": "drive.file.replies.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Decline a file approval",
+      "canonical_id": "drive.file.approvalIddecline.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a comment on a file",
+      "canonical_id": "drive.file.comments.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a reply to a comment on a file",
+      "canonical_id": "drive.file.replies.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a reply to a comment on a file",
+      "canonical_id": "drive.file.replies.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a shared drive and its contents",
+      "canonical_id": "drive.drive.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a shared drive and its contents",
+      "canonical_id": "drive.drive.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a specific comment from a file",
+      "canonical_id": "drive.file.comments.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a specific file revision",
+      "canonical_id": "drive.file.revisions.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a specific file revision",
+      "canonical_id": "drive.file.revisions.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a team drive",
+      "canonical_id": "drive.teamdrive.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a team drive",
+      "canonical_id": "drive.teamdrive.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Download file content by file ID",
+      "canonical_id": "drive.file.download"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Empty the trash and permanently delete all trashed files",
+      "canonical_id": "drive.file.trash.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Empty the trash and permanently delete all trashed files",
+      "canonical_id": "drive.file.trash.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Export a Google Workspace document to a specified MIME type",
+      "canonical_id": "drive.file.export.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Export a Google Workspace document to a specified MIME type",
+      "canonical_id": "drive.file.export.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Fetch a specific comment by file and comment ID",
+      "canonical_id": "drive.file.comments.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Generate a CSE token to create or update CSE files",
+      "canonical_id": "drive.file.generateCseToken.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Generate a token to create or update CSE files",
+      "canonical_id": "drive.file.generateCseToken.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Generate unique file IDs for creating or copying files",
+      "canonical_id": "drive.file.generateIds.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Generate unique file IDs for uploads",
+      "canonical_id": "drive.file.generateIds.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a file revision's metadata or content by ID",
+      "canonical_id": "drive.file.revisions.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a file's revision history",
+      "canonical_id": "drive.file.revisions.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a file's revision history",
+      "canonical_id": "drive.file.revisions.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of installed apps",
+      "canonical_id": "drive.app.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific access proposal for a file",
+      "canonical_id": "drive.file.accessproposals.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific approval for a file",
+      "canonical_id": "drive.file.approvals.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific file permission by its ID",
+      "canonical_id": "drive.file.permissions.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific file permission by its ID",
+      "canonical_id": "drive.file.permissions.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific reply to a comment on a file",
+      "canonical_id": "drive.file.replies.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific reply to a comment on a file",
+      "canonical_id": "drive.file.replies.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific team drive",
+      "canonical_id": "drive.teamdrive.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific team drive",
+      "canonical_id": "drive.teamdrive.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get comments for a specific file",
+      "canonical_id": "drive.file.comments.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get file metadata or content by ID",
+      "canonical_id": "drive.file.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get file or shared drive permissions",
+      "canonical_id": "drive.file.permissions.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get file or shared drive permissions",
+      "canonical_id": "drive.file.permissions.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get replies for a specific comment on a file",
+      "canonical_id": "drive.file.replies.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get shared drive metadata by ID",
+      "canonical_id": "drive.drive.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get shared drive metadata by ID",
+      "canonical_id": "drive.drive.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get the starting page token for listing future changes",
+      "canonical_id": "drive.change.startPageToken.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get the starting page token for listing future changes",
+      "canonical_id": "drive.change.startPageToken.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get user and system information",
+      "canonical_id": "drive.about.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get user info and Drive API settings",
+      "canonical_id": "drive.about.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Grant or revoke file access for users or groups",
+      "canonical_id": "drive.file.permissions.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Hide a shared drive from the default view",
+      "canonical_id": "drive.drive.hide.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Hide a shared drive from the default view",
+      "canonical_id": "drive.drive.hide.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List a user's installed apps",
+      "canonical_id": "drive.app.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List access proposals for a file",
+      "canonical_id": "drive.file.accessproposals.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List approvals for a specific file",
+      "canonical_id": "drive.file.approvals.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List available team drives",
+      "canonical_id": "drive.teamdrive.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List changes for a user or shared drive",
+      "canonical_id": "drive.change.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List changes for a user or shared drive",
+      "canonical_id": "drive.change.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List comments for a specific file",
+      "canonical_id": "drive.file.comments.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List labels associated with a specific file",
+      "canonical_id": "drive.file.listLabels.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List labels associated with a specific file",
+      "canonical_id": "drive.file.listLabels.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List replies for a specific comment",
+      "canonical_id": "drive.file.replies.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List team drives, use drives.list instead",
+      "canonical_id": "drive.teamdrive.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Modify labels applied to a file",
+      "canonical_id": "drive.file.modifyLabels.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Permanently delete a file",
+      "canonical_id": "drive.file.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Permanently delete a file or folder",
+      "canonical_id": "drive.file.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Reassign reviewers for a file approval",
+      "canonical_id": "drive.file.approvalIdreassign.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a file permission",
+      "canonical_id": "drive.file.permissions.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a permission from a file or shared drive",
+      "canonical_id": "drive.file.permissions.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Reply to a specific comment on a file",
+      "canonical_id": "drive.file.replies.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve a specific comment for a file",
+      "canonical_id": "drive.file.comments.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve a specific file revision by its ID",
+      "canonical_id": "drive.file.revisions.get.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve details for a specific app by its ID",
+      "canonical_id": "drive.app.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve details for a specific application",
+      "canonical_id": "drive.app.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve file metadata or content by ID",
+      "canonical_id": "drive.file.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve the latest status of a long-running operation",
+      "canonical_id": "drive.operation.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Search and list shared drives",
+      "canonical_id": "drive.drive.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Search and list shared drives",
+      "canonical_id": "drive.drive.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Search and list user files with optional filters",
+      "canonical_id": "drive.file.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Search and list user files with query options",
+      "canonical_id": "drive.file.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Start an approval process for a file",
+      "canonical_id": "drive.file.approvalsstart.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Stop watching resources through this channel",
+      "canonical_id": "drive.channel.stop"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Stop watching resources through this channel",
+      "canonical_id": "drive.channel.stop"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Subscribe to file change notifications",
+      "canonical_id": "drive.file.watch.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Subscribe to user changes",
+      "canonical_id": "drive.change.watch.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Subscribe to user changes and receive notifications",
+      "canonical_id": "drive.change.watch.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Unhide a shared drive",
+      "canonical_id": "drive.drive.unhide.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Unhide a shared drive",
+      "canonical_id": "drive.drive.unhide.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a comment reply",
+      "canonical_id": "drive.file.replies.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a file comment",
+      "canonical_id": "drive.file.comments.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a file revision by ID",
+      "canonical_id": "drive.file.revisions.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a file revision with specific changes",
+      "canonical_id": "drive.file.revisions.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a file's comment",
+      "canonical_id": "drive.file.comments.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a file's metadata and content",
+      "canonical_id": "drive.file.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a file's metadata or content",
+      "canonical_id": "drive.file.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a specific reply to a comment on a file",
+      "canonical_id": "drive.file.replies.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a team drive",
+      "canonical_id": "drive.teamdrive.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a team drive",
+      "canonical_id": "drive.teamdrive.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update file labels",
+      "canonical_id": "drive.file.modifyLabels.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update file permission details",
+      "canonical_id": "drive.file.permissions.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update file permission settings",
+      "canonical_id": "drive.file.permissions.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update shared drive metadata",
+      "canonical_id": "drive.drive.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update shared drive metadata",
+      "canonical_id": "drive.drive.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Upload a new file",
+      "canonical_id": "drive.file.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Watch for changes to a specific file",
+      "canonical_id": "drive.file.watch.create"
+    }
+  ]
+}

@@ -1,0 +1,2513 @@
+VERSION: 2.0.2
+DEFAULTS:
+  bearer_token: BEARER <ACCESS_TOKEN>
+  w_base_url: https://drivelabels.googleapis.com
+METHODS:
+  drivelabels.label.list:
+    SUMMARY: List labels
+    DESC: List labels. For more information, see [Search for labels](https://developers.google.com/workspace/drive/labels/guides/search-label).
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v2/labels
+      HEADERS:
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - customer:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - languageCode:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - minimumRole:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - pageSize:
+          TYPE: INT
+          REQUIRED: false
+          LOCATION: query
+      - pageToken:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - publishedOnly:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - useAdminAccess:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - view:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2ListLabelsResponse)
+        RETURNVAR: drivelabels_label_list
+        STATUS: 200
+    CANONICAL_ID: drivelabels.label.list
+  drivelabels.label.create:
+    SUMMARY: Creates a label
+    DESC: Creates a label. For more information, see [Create and publish a label](https://developers.google.com/workspace/drive/labels/guides/create-label).
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/labels
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - languageCode:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - useAdminAccess:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+        RETURNVAR: drivelabels_label_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.label.create
+  drivelabels.limit.label.list:
+    SUMMARY: Get the constraints on the structure of a label; such as, the maximum number of fields allowed and maximum length of the label title.
+    DESC: Get the constraints on the structure of a label; such as, the maximum number of fields allowed and maximum length of the label title.
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v2/limits/label
+      HEADERS:
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2LabelLimits)
+        RETURNVAR: drivelabels_limit_label_list
+        STATUS: 200
+    CANONICAL_ID: drivelabels.limit.label.list
+  drivelabels.resource.execute:
+    SUMMARY: Deletes a label's permission
+    DESC: Deletes a label's permission. Permissions affect the label resource as a whole, aren't revisioned, and don't require publishing.
+    HTTP:
+      METHOD: DELETE
+      ENDPOINT: /v2/{+name}
+      HEADERS:
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          LOCATION: path
+      - useAdminAccess:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - writeControl.requiredRevisionId:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleProtobufEmpty)
+        RETURNVAR: drivelabels_resource_execute
+        STATUS: 200
+    CANONICAL_ID: drivelabels.resource.execute
+  drivelabels.resource.execute.1:
+    SUMMARY: Get a label by its resource name
+    DESC: "Get a label by its resource name. For more information, see [Search for labels](https://developers.google.com/workspace/drive/labels/guides/search-label). Resource name may be any of: * `labels/{id}` - See `labels/{id}@latest` * `labels/{id}@latest` - Gets the latest revision of the label. * `labels/{id}@published` - Gets the current published revision of the label. * `labels/{id}@{revision_id}` - Gets the label at the specified revision ID."
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v2/{+name}
+      HEADERS:
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          LOCATION: path
+      - languageCode:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - useAdminAccess:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - view:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+        RETURNVAR: drivelabels_resource_execute_1
+        STATUS: 200
+    CANONICAL_ID: drivelabels.resource.execute.1
+  drivelabels.namedelta.create:
+    SUMMARY: Updates a single label by applying a set of update requests resulting in a new draft revision
+    DESC: "Updates a single label by applying a set of update requests resulting in a new draft revision. For more information, see [Update a label](https://developers.google.com/workspace/drive/labels/guides/update-label). The batch update is all-or-nothing: If any of the update requests are invalid, no changes are applied. The resulting draft revision must be published before the changes may be used with Drive items."
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+name}:delta
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequest)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          LOCATION: path
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequest)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponse)
+        RETURNVAR: drivelabels_namedelta_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.namedelta.create
+  drivelabels.namedisable.create:
+    SUMMARY: Disable a published label
+    DESC: Disable a published label. For more information, see [Disable, enable, and delete a label](https://developers.google.com/workspace/drive/labels/guides/disable-delete-label). Disabling a label will result in a new disabled published revision based on the current published revision. If there's a draft revision, a new disabled draft revision will be created based on the latest draft revision. Older draft revisions will be deleted. Once disabled, a label may be deleted with `DeleteLabel`.
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+name}:disable
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2DisableLabelRequest)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          LOCATION: path
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2DisableLabelRequest)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+        RETURNVAR: drivelabels_namedisable_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.namedisable.create
+  drivelabels.nameenable.create:
+    SUMMARY: Enable a disabled label and restore it to its published state
+    DESC: Enable a disabled label and restore it to its published state. For more information, see [Disable, enable, and delete a label](https://developers.google.com/workspace/drive/labels/guides/disable-delete-label). This will result in a new published revision based on the current disabled published revision. If there's an existing disabled draft revision, a new revision will be created based on that draft and will be enabled.
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+name}:enable
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2EnableLabelRequest)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          LOCATION: path
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2EnableLabelRequest)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+        RETURNVAR: drivelabels_nameenable_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.nameenable.create
+  drivelabels.namepublish.create:
+    SUMMARY: Publish all draft changes to the label
+    DESC: "Publish all draft changes to the label. Once published, the label may not return to its draft state. For more information, see [Create and publish a label](https://developers.google.com/workspace/drive/labels/guides/create-label). Publishing a label will result in a new published revision. All previous draft revisions will be deleted. Previous published revisions will be kept but are subject to automated deletion as needed. For more information, see [Label lifecycle](https://developers.google.com/workspace/drive/labels/guides/label-lifecycle). Once published, some changes are no longer permitted. Generally, any change that would invalidate or cause new restrictions on existing metadata related to the label will be rejected. For example, the following changes to a label will be rejected after the label is published: * The label cannot be directly deleted. It must be disabled first, then deleted. * `Field.FieldType` cannot be changed. * Changes to field validation options cannot reject something that was previously accepted. * Reducing the maximum entries."
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+name}:publish
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2PublishLabelRequest)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          LOCATION: path
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2PublishLabelRequest)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+        RETURNVAR: drivelabels_namepublish_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.namepublish.create
+  drivelabels.nameupdatelabelcopymode.create:
+    SUMMARY: Updates a label's `CopyMode`
+    DESC: Updates a label's `CopyMode`. Changes to this policy aren't revisioned, don't require publishing, and take effect immediately.
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+name}:updateLabelCopyMode
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2UpdateLabelCopyModeRequest)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          LOCATION: path
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2UpdateLabelCopyModeRequest)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+        RETURNVAR: drivelabels_nameupdatelabelcopymode_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.nameupdatelabelcopymode.create
+  drivelabels.nameupdatelabelenabledappsetting.create:
+    SUMMARY: Updates a label's `EnabledAppSettings`
+    DESC: Updates a label's `EnabledAppSettings`. Enabling a label in a Google Workspace app allows it to be used in that app. This change isn't revisioned, doesn't require publishing, and takes effect immediately.
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+name}:updateLabelEnabledAppSettings
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2UpdateLabelEnabledAppSettingsRequest)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - name:
+          TYPE: STRING
+          LOCATION: path
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2UpdateLabelEnabledAppSettingsRequest)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2Label)
+        RETURNVAR: drivelabels_nameupdatelabelenabledappsetting_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.nameupdatelabelenabledappsetting.create
+  drivelabels.lock.get:
+    SUMMARY: Lists the label locks on a label.
+    DESC: Lists the label locks on a label.
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v2/{+parent}/locks
+      HEADERS:
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - parent:
+          TYPE: STRING
+          LOCATION: path
+      - pageSize:
+          TYPE: INT
+          REQUIRED: false
+          LOCATION: query
+      - pageToken:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2ListLabelLocksResponse)
+        RETURNVAR: drivelabels_lock_get
+        STATUS: 200
+    CANONICAL_ID: drivelabels.lock.get
+  drivelabels.permission.get:
+    SUMMARY: Lists a label's permissions.
+    DESC: Lists a label's permissions.
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v2/{+parent}/permissions
+      HEADERS:
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - parent:
+          TYPE: STRING
+          LOCATION: path
+      - pageSize:
+          TYPE: INT
+          REQUIRED: false
+          LOCATION: query
+      - pageToken:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - useAdminAccess:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2ListLabelPermissionsResponse)
+        RETURNVAR: drivelabels_permission_get
+        STATUS: 200
+    CANONICAL_ID: drivelabels.permission.get
+  drivelabels.permission.update:
+    SUMMARY: Updates a label's permissions
+    DESC: Updates a label's permissions. If a permission for the indicated principal doesn't exist, a label permission is created, otherwise the existing permission is updated. Permissions affect the label resource as a whole, aren't revisioned, and don't require publishing.
+    HTTP:
+      METHOD: PATCH
+      ENDPOINT: /v2/{+parent}/permissions
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2LabelPermission)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - parent:
+          TYPE: STRING
+          LOCATION: path
+      - useAdminAccess:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2LabelPermission)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2LabelPermission)
+        RETURNVAR: drivelabels_permission_update
+        STATUS: 200
+    CANONICAL_ID: drivelabels.permission.update
+  drivelabels.permission.create:
+    SUMMARY: Updates a label's permissions
+    DESC: Updates a label's permissions. If a permission for the indicated principal doesn't exist, a label permission is created, otherwise the existing permission is updated. Permissions affect the label resource as a whole, aren't revisioned, and don't require publishing.
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+parent}/permissions
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2LabelPermission)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - parent:
+          TYPE: STRING
+          LOCATION: path
+      - useAdminAccess:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2LabelPermission)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2LabelPermission)
+        RETURNVAR: drivelabels_permission_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.permission.create
+  drivelabels.permissionsbatchdelete.create:
+    SUMMARY: Deletes label permissions
+    DESC: Deletes label permissions. Permissions affect the label resource as a whole, aren't revisioned, and don't require publishing.
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+parent}/permissions:batchDelete
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2BatchDeleteLabelPermissionsRequest)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - parent:
+          TYPE: STRING
+          LOCATION: path
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2BatchDeleteLabelPermissionsRequest)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleProtobufEmpty)
+        RETURNVAR: drivelabels_permissionsbatchdelete_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.permissionsbatchdelete.create
+  drivelabels.permissionsbatchupdate.create:
+    SUMMARY: Updates label permissions
+    DESC: Updates label permissions. If a permission for the indicated principal doesn't exist, a label permission is created, otherwise the existing permission is updated. Permissions affect the label resource as a whole, aren't revisioned, and don't require publishing.
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v2/{+parent}/permissions:batchUpdate
+      HEADERS:
+        Content-Type: application/json
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsRequest)
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - alt:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - uploadType:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - $.xgafv:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - key:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - callback:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - oauth_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - upload_protocol:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - prettyPrint:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+      - quotaUser:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - fields:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - access_token:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - parent:
+          TYPE: STRING
+          LOCATION: path
+      - body:
+          TYPE: STRUCT(GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsRequest)
+          REQUIRED: false
+          LOCATION: body
+    RETURNS:
+      - RETURNTYPE: STRUCT(GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsResponse)
+        RETURNVAR: drivelabels_permissionsbatchupdate_create
+        STATUS: 200
+    CANONICAL_ID: drivelabels.permissionsbatchupdate.create
+STRUCTS:
+  GoogleAppsDriveLabelsV2BadgeColors:
+    - name: backgroundColor
+      type: STRUCT(GoogleTypeColor)
+      REQUIRED: false
+      comment: Output only. Badge background that pairs with the foreground.
+    - name: foregroundColor
+      type: STRUCT(GoogleTypeColor)
+      REQUIRED: false
+      comment: Output only. Badge foreground that pairs with the background.
+    - name: soloColor
+      type: STRUCT(GoogleTypeColor)
+      REQUIRED: false
+      comment: Output only. Color that can be used for text without a background.
+  GoogleTypeColor:
+    - name: alpha
+      type: FLOAT
+      REQUIRED: false
+      comment: "The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0)."
+    - name: blue
+      type: FLOAT
+      REQUIRED: false
+      comment: The amount of blue in the color as a value in the interval [0, 1].
+    - name: green
+      type: FLOAT
+      REQUIRED: false
+      comment: The amount of green in the color as a value in the interval [0, 1].
+    - name: red
+      type: FLOAT
+      REQUIRED: false
+      comment: The amount of red in the color as a value in the interval [0, 1].
+  GoogleAppsDriveLabelsV2BadgeConfig:
+    - name: color
+      type: STRUCT(GoogleTypeColor)
+      REQUIRED: false
+      comment: The color of the badge. When not specified, no badge is rendered. The background, foreground, and solo (light and dark mode) colors set here are changed in the Drive UI into the closest recommended supported color.
+    - name: priorityOverride
+      type: STRING
+      REQUIRED: false
+      comment: Override the default global priority of this badge. When set to 0, the default priority heuristic is used.
+  GoogleAppsDriveLabelsV2BatchDeleteLabelPermissionsRequest:
+    - name: requests
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2DeleteLabelPermissionRequest)"
+      REQUIRED: false
+      comment: Required. The request message specifying the resources to update.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access. If this is set, the `use_admin_access` field in the `DeleteLabelPermissionRequest` messages must either be empty or match this field.
+  GoogleAppsDriveLabelsV2DeleteLabelPermissionRequest:
+    - name: name
+      type: STRING
+      REQUIRED: false
+      comment: Required. Label permission resource name.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access.
+  GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsRequest:
+    - name: requests
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2UpdateLabelPermissionRequest)"
+      REQUIRED: false
+      comment: Required. The request message specifying the resources to update.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access. If this is set, the `use_admin_access` field in the `UpdateLabelPermissionRequest` messages must either be empty or match this field.
+  GoogleAppsDriveLabelsV2UpdateLabelPermissionRequest:
+    - name: labelPermission
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelPermission)
+      REQUIRED: false
+      comment: Required. The permission to create or update on the label.
+    - name: parent
+      type: STRING
+      REQUIRED: false
+      comment: Required. The parent label resource name.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access.
+  GoogleAppsDriveLabelsV2LabelPermission:
+    - name: audience
+      type: STRING
+      REQUIRED: false
+      comment: Audience to grant a role to. The magic value of `audiences/default` may be used to apply the role to the default audience in the context of the organization that owns the label.
+    - name: email
+      type: STRING
+      REQUIRED: false
+      comment: Specifies the email address for a user or group principal. Not populated for audience principals. User and group permissions may only be inserted using an email address. On update requests, if email address is specified, no principal should be specified.
+    - name: group
+      type: STRING
+      REQUIRED: false
+      comment: Group resource name.
+    - name: name
+      type: STRING
+      REQUIRED: false
+      comment: Resource name of this permission.
+    - name: person
+      type: STRING
+      REQUIRED: false
+      comment: Person resource name.
+    - name: role
+      type: STRING
+      REQUIRED: false
+      comment: The role the principal should have.
+  GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsResponse:
+    - name: permissions
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2LabelPermission)"
+      REQUIRED: false
+      comment: Required. Permissions updated.
+  GoogleAppsDriveLabelsV2DateLimits:
+    - name: maxValue
+      type: STRUCT(GoogleTypeDate)
+      REQUIRED: false
+      comment: Maximum value for the date field type.
+    - name: minValue
+      type: STRUCT(GoogleTypeDate)
+      REQUIRED: false
+      comment: Minimum value for the date field type.
+  GoogleTypeDate:
+    - name: day
+      type: INT
+      REQUIRED: false
+      comment: Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+    - name: month
+      type: INT
+      REQUIRED: false
+      comment: Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+    - name: year
+      type: INT
+      REQUIRED: false
+      comment: Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequest:
+    - name: languageCode
+      type: STRING
+      REQUIRED: false
+      comment: The BCP-47 language code to use for evaluating localized field labels when `include_label_in_response` is `true`.
+    - name: requests
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestRequest)"
+      REQUIRED: false
+      comment: A list of updates to apply to the label. Requests will be applied in the order they are specified.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access.
+    - name: view
+      type: STRING
+      REQUIRED: false
+      comment: When specified, only certain fields belonging to the indicated view will be returned.
+    - name: writeControl
+      type: STRUCT(GoogleAppsDriveLabelsV2WriteControl)
+      REQUIRED: false
+      comment: Provides control over how write requests are executed.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestRequest:
+    - name: createField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestCreateFieldRequest)
+      REQUIRED: false
+      comment: Creates a field.
+    - name: createSelectionChoice
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestCreateSelectionChoiceRequest)
+      REQUIRED: false
+      comment: Create a choice within a selection field.
+    - name: deleteField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestDeleteFieldRequest)
+      REQUIRED: false
+      comment: Deletes a field from the label.
+    - name: deleteSelectionChoice
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestDeleteSelectionChoiceRequest)
+      REQUIRED: false
+      comment: Delete a choice within a selection field.
+    - name: disableField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestDisableFieldRequest)
+      REQUIRED: false
+      comment: Disables the field.
+    - name: disableSelectionChoice
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestDisableSelectionChoiceRequest)
+      REQUIRED: false
+      comment: Disable a choice within a selection field.
+    - name: enableField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestEnableFieldRequest)
+      REQUIRED: false
+      comment: Enables the field.
+    - name: enableSelectionChoice
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestEnableSelectionChoiceRequest)
+      REQUIRED: false
+      comment: Enable a choice within a selection field.
+    - name: updateField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestUpdateFieldPropertiesRequest)
+      REQUIRED: false
+      comment: Updates basic properties of a field.
+    - name: updateFieldType
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestUpdateFieldTypeRequest)
+      REQUIRED: false
+      comment: Update field type and/or type options.
+    - name: updateLabel
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestUpdateLabelPropertiesRequest)
+      REQUIRED: false
+      comment: Updates the label properties.
+    - name: updateSelectionChoiceProperties
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestUpdateSelectionChoicePropertiesRequest)
+      REQUIRED: false
+      comment: Update a choice property within a selection field.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestCreateFieldRequest:
+    - name: field
+      type: STRUCT(GoogleAppsDriveLabelsV2Field)
+      REQUIRED: false
+      comment: Required. Field to create.
+  GoogleAppsDriveLabelsV2Field:
+    - name: appliedCapabilities
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldAppliedCapabilities)
+      REQUIRED: false
+      comment: Output only. The capabilities this user has on this field and its value when the label is applied on Drive items.
+    - name: createTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this field was created.
+    - name: creator
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who created this field.
+    - name: dateOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldDateOptions)
+      REQUIRED: false
+      comment: Date field options.
+    - name: disableTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this field was disabled. This value has no meaning when the field is not disabled.
+    - name: disabler
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who disabled this field. This value has no meaning when the field is not disabled.
+    - name: displayHints
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldDisplayHints)
+      REQUIRED: false
+      comment: Output only. UI display hints for rendering a field.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: "Output only. The key of a field, unique within a label or library. This value is autogenerated. Matches the regex: `([a-zA-Z0-9])+`."
+    - name: integerOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldIntegerOptions)
+      REQUIRED: false
+      comment: Integer field options.
+    - name: lifecycle
+      type: STRUCT(GoogleAppsDriveLabelsV2Lifecycle)
+      REQUIRED: false
+      comment: Output only. The lifecycle of this field.
+    - name: lockStatus
+      type: STRUCT(GoogleAppsDriveLabelsV2LockStatus)
+      REQUIRED: false
+      comment: Output only. The `LockStatus` of this field.
+    - name: properties
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldProperties)
+      REQUIRED: false
+      comment: The basic properties of the field.
+    - name: publisher
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who published this field. This value has no meaning when the field is not published.
+    - name: queryKey
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The key to use when constructing Drive search queries to find files based on values defined for this field on files. For example, "`{query_key}` > 2001-01-01".
+    - name: schemaCapabilities
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSchemaCapabilities)
+      REQUIRED: false
+      comment: Output only. The capabilities this user has when editing this field.
+    - name: selectionOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptions)
+      REQUIRED: false
+      comment: Selection field options.
+    - name: textOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldTextOptions)
+      REQUIRED: false
+      comment: Text field options.
+    - name: updateTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this field was updated.
+    - name: updater
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who modified this field.
+    - name: userOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldUserOptions)
+      REQUIRED: false
+      comment: User field options.
+  GoogleAppsDriveLabelsV2FieldAppliedCapabilities:
+    - name: canRead
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can read related applied metadata on items.
+    - name: canSearch
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can search for Drive items referencing this field.
+    - name: canWrite
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can set this field on Drive items.
+  GoogleAppsDriveLabelsV2UserInfo:
+    - name: person
+      type: STRING
+      REQUIRED: false
+      comment: The identifier for this user that can be used with the [People API](https://developers.google.com/people) to get more information. For example, `people/12345678`.
+  GoogleAppsDriveLabelsV2FieldDateOptions:
+    - name: dateFormat
+      type: STRING
+      REQUIRED: false
+      comment: Output only. ICU date format.
+    - name: dateFormatType
+      type: STRING
+      REQUIRED: false
+      comment: Localized date formatting option. Field values are rendered in this format according to their locale.
+    - name: maxValue
+      type: STRUCT(GoogleTypeDate)
+      REQUIRED: false
+      comment: Output only. Maximum valid value (year, month, day).
+    - name: minValue
+      type: STRUCT(GoogleTypeDate)
+      REQUIRED: false
+      comment: Output only. Minimum valid value (year, month, day).
+  GoogleAppsDriveLabelsV2FieldDisplayHints:
+    - name: disabled
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the field should be shown in the UI as disabled.
+    - name: hiddenInSearch
+      type: BOOL
+      REQUIRED: false
+      comment: This field should be hidden in the search menu when searching for Drive items.
+    - name: required
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the field should be shown as required in the UI.
+    - name: shownInApply
+      type: BOOL
+      REQUIRED: false
+      comment: This field should be shown in the apply menu when applying values to a Drive item.
+  GoogleAppsDriveLabelsV2FieldIntegerOptions:
+    - name: maxValue
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The maximum valid value for the integer field.
+    - name: minValue
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The minimum valid value for the integer field.
+  GoogleAppsDriveLabelsV2Lifecycle:
+    - name: disabledPolicy
+      type: STRUCT(GoogleAppsDriveLabelsV2LifecycleDisabledPolicy)
+      REQUIRED: false
+      comment: The policy that governs how to show a disabled label, field, or selection choice.
+    - name: hasUnpublishedChanges
+      type: BOOL
+      REQUIRED: false
+      comment: Output only. Whether the object associated with this lifecycle has unpublished changes.
+    - name: state
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The state of the object associated with this lifecycle.
+  GoogleAppsDriveLabelsV2LifecycleDisabledPolicy:
+    - name: hideInSearch
+      type: BOOL
+      REQUIRED: false
+      comment: Whether to hide this disabled object in the search menu for Drive items. * When `false`, the object is generally shown in the UI as disabled but it appears in the search results when searching for Drive items. * When `true`, the object is generally hidden in the UI when searching for Drive items.
+    - name: showInApply
+      type: BOOL
+      REQUIRED: false
+      comment: Whether to show this disabled object in the apply menu on Drive items. * When `true`, the object is generally shown in the UI as disabled and is unselectable. * When `false`, the object is generally hidden in the UI.
+  GoogleAppsDriveLabelsV2LockStatus:
+    - name: locked
+      type: BOOL
+      REQUIRED: false
+      comment: Output only. Indicates whether this label component is the (direct) target of a label lock. A label component can be implicitly locked even if it's not the direct target of a label lock, in which case this field is set to false.
+  GoogleAppsDriveLabelsV2FieldProperties:
+    - name: displayName
+      type: STRING
+      REQUIRED: false
+      comment: Required. The display text to show in the UI identifying this field.
+    - name: insertBeforeField
+      type: STRING
+      REQUIRED: false
+      comment: Input only. Insert or move this field before the indicated field. If empty, the field is placed at the end of the list.
+    - name: required
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the field should be marked as required.
+  GoogleAppsDriveLabelsV2FieldSchemaCapabilities:
+    - name: canDelete
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can delete this field. The user must have permission and the field must be deprecated.
+    - name: canDisable
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can disable this field. The user must have permission and this field must not already be disabled.
+    - name: canEnable
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can enable this field. The user must have permission and this field must be disabled.
+    - name: canUpdate
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can change this field.
+  GoogleAppsDriveLabelsV2FieldSelectionOptions:
+    - name: choices
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice)"
+      REQUIRED: false
+      comment: The options available for this selection field. The list order is consistent, and modified with `insert_before_choice`.
+    - name: listOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldListOptions)
+      REQUIRED: false
+      comment: When specified, indicates this field supports a list of values. Once the field is published, this cannot be changed.
+  GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice:
+    - name: appliedCapabilities
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceAppliedCapabilities)
+      REQUIRED: false
+      comment: Output only. The capabilities related to this choice on applied metadata.
+    - name: createTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this choice was created.
+    - name: creator
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who created this choice.
+    - name: disableTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this choice was disabled. This value has no meaning when the choice is not disabled.
+    - name: disabler
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who disabled this choice. This value has no meaning when the option is not disabled.
+    - name: displayHints
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceDisplayHints)
+      REQUIRED: false
+      comment: Output only. UI display hints for rendering a choice.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: "The unique value of the choice. This ID is autogenerated. Matches the regex: `([a-zA-Z0-9_])+`."
+    - name: lifecycle
+      type: STRUCT(GoogleAppsDriveLabelsV2Lifecycle)
+      REQUIRED: false
+      comment: Output only. Lifecycle of the choice.
+    - name: lockStatus
+      type: STRUCT(GoogleAppsDriveLabelsV2LockStatus)
+      REQUIRED: false
+      comment: Output only. The `LockStatus` of this choice.
+    - name: properties
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceProperties)
+      REQUIRED: false
+      comment: Basic properties of the choice.
+    - name: publishTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this choice was published. This value has no meaning when the choice is not published.
+    - name: publisher
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who published this choice. This value has no meaning when the choice is not published.
+    - name: schemaCapabilities
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceSchemaCapabilities)
+      REQUIRED: false
+      comment: Output only. The capabilities related to this option when editing the option.
+    - name: updateTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this choice was updated last.
+    - name: updater
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who updated this choice last.
+  GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceAppliedCapabilities:
+    - name: canRead
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can read related applied metadata on items.
+    - name: canSearch
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can use this choice in search queries.
+    - name: canSelect
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can select this choice on an item.
+  GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceDisplayHints:
+    - name: badgeColors
+      type: STRUCT(GoogleAppsDriveLabelsV2BadgeColors)
+      REQUIRED: false
+      comment: The colors to use for the badge. Changed to Google Material colors based on the chosen `properties.badge_config.color`.
+    - name: badgePriority
+      type: STRING
+      REQUIRED: false
+      comment: The priority of this badge. Used to compare and sort between multiple badges. A lower number means the badge should be shown first. When a badging configuration is not present, this will be 0. Otherwise, this will be set to `BadgeConfig.priority_override` or the default heuristic which prefers creation date of the label, and field and option priority.
+    - name: darkBadgeColors
+      type: STRUCT(GoogleAppsDriveLabelsV2BadgeColors)
+      REQUIRED: false
+      comment: The dark-mode color to use for the badge. Changed to Google Material colors based on the chosen `properties.badge_config.color`.
+    - name: disabled
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the option should be shown in the UI as disabled.
+    - name: hiddenInSearch
+      type: BOOL
+      REQUIRED: false
+      comment: This option should be hidden in the search menu when searching for Drive items.
+    - name: shownInApply
+      type: BOOL
+      REQUIRED: false
+      comment: This option should be shown in the apply menu when applying values to a Drive item.
+  GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceProperties:
+    - name: badgeConfig
+      type: STRUCT(GoogleAppsDriveLabelsV2BadgeConfig)
+      REQUIRED: false
+      comment: The badge configuration for this choice. When set, the label that owns this choice is considered a "badged label".
+    - name: description
+      type: STRING
+      REQUIRED: false
+      comment: The description of this label.
+    - name: displayName
+      type: STRING
+      REQUIRED: false
+      comment: Required. The display text to show in the UI identifying this field.
+    - name: insertBeforeChoice
+      type: STRING
+      REQUIRED: false
+      comment: Input only. Insert or move this choice before the indicated choice. If empty, the choice is placed at the end of the list.
+  GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceSchemaCapabilities:
+    - name: canDelete
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can delete this choice.
+    - name: canDisable
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can disable this choice.
+    - name: canEnable
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can enable this choice.
+    - name: canUpdate
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can update this choice.
+  GoogleAppsDriveLabelsV2FieldListOptions:
+    - name: maxEntries
+      type: INT
+      REQUIRED: false
+      comment: Maximum number of entries permitted.
+  GoogleAppsDriveLabelsV2FieldTextOptions:
+    - name: maxLength
+      type: INT
+      REQUIRED: false
+      comment: Output only. The maximum valid length of values for the text field.
+    - name: minLength
+      type: INT
+      REQUIRED: false
+      comment: Output only. The minimum valid length of values for the text field.
+  GoogleAppsDriveLabelsV2FieldUserOptions:
+    - name: listOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldListOptions)
+      REQUIRED: false
+      comment: When specified, indicates that this field supports a list of values. Once the field is published, this cannot be changed.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestCreateSelectionChoiceRequest:
+    - name: choice
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice)
+      REQUIRED: false
+      comment: Required. The choice to create.
+    - name: fieldId
+      type: STRING
+      REQUIRED: false
+      comment: Required. The selection field in which a choice will be created.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestDeleteFieldRequest:
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. ID of the field to delete.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestDeleteSelectionChoiceRequest:
+    - name: fieldId
+      type: STRING
+      REQUIRED: false
+      comment: Required. The selection field from which a choice will be deleted.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. Choice to delete.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestDisableFieldRequest:
+    - name: disabledPolicy
+      type: STRUCT(GoogleAppsDriveLabelsV2LifecycleDisabledPolicy)
+      REQUIRED: false
+      comment: Required. Field disabled policy.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. Key of the field to disable.
+    - name: updateMask
+      type: STRING
+      REQUIRED: false
+      comment: The fields that should be updated. At least one field must be specified. The root `disabled_policy` is implied and should not be specified. A single `*` can be used as a short-hand for updating every field.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestDisableSelectionChoiceRequest:
+    - name: disabledPolicy
+      type: STRUCT(GoogleAppsDriveLabelsV2LifecycleDisabledPolicy)
+      REQUIRED: false
+      comment: Required. The disabled policy to update.
+    - name: fieldId
+      type: STRING
+      REQUIRED: false
+      comment: Required. The selection field in which a choice will be disabled.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. Choice to disable.
+    - name: updateMask
+      type: STRING
+      REQUIRED: false
+      comment: The fields that should be updated. At least one field must be specified. The root `disabled_policy` is implied and should not be specified. A single `*` can be used as a short-hand for updating every field.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestEnableFieldRequest:
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. ID of the field to enable.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestEnableSelectionChoiceRequest:
+    - name: fieldId
+      type: STRING
+      REQUIRED: false
+      comment: Required. The selection field in which a choice will be enabled.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. Choice to enable.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestUpdateFieldPropertiesRequest:
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. The field to update.
+    - name: properties
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldProperties)
+      REQUIRED: false
+      comment: Required. Basic field properties.
+    - name: updateMask
+      type: STRING
+      REQUIRED: false
+      comment: The fields that should be updated. At least one field must be specified. The root `properties` is implied and should not be specified. A single `*` can be used as a short-hand for updating every field.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestUpdateFieldTypeRequest:
+    - name: dateOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldDateOptions)
+      REQUIRED: false
+      comment: Update field to Date.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. The field to update.
+    - name: integerOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldIntegerOptions)
+      REQUIRED: false
+      comment: Update field to Integer.
+    - name: selectionOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptions)
+      REQUIRED: false
+      comment: Update field to Selection.
+    - name: textOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldTextOptions)
+      REQUIRED: false
+      comment: Update field to Text.
+    - name: updateMask
+      type: STRING
+      REQUIRED: false
+      comment: The fields that should be updated. At least one field must be specified. The root of `type_options` is implied and should not be specified. A single `*` can be used as a short-hand for updating every field.
+    - name: userOptions
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldUserOptions)
+      REQUIRED: false
+      comment: Update field to User.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestUpdateLabelPropertiesRequest:
+    - name: properties
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelProperties)
+      REQUIRED: false
+      comment: Required. Label properties to update.
+    - name: updateMask
+      type: STRING
+      REQUIRED: false
+      comment: The fields that should be updated. At least one field must be specified. The root `label_properties` is implied and should not be specified. A single `*` can be used as a short-hand for updating every field.
+  GoogleAppsDriveLabelsV2LabelProperties:
+    - name: description
+      type: STRING
+      REQUIRED: false
+      comment: The description of the label.
+    - name: title
+      type: STRING
+      REQUIRED: false
+      comment: Required. Title of the label.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestUpdateSelectionChoicePropertiesRequest:
+    - name: fieldId
+      type: STRING
+      REQUIRED: false
+      comment: Required. The selection field to update.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: Required. The choice to update.
+    - name: properties
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceProperties)
+      REQUIRED: false
+      comment: Required. The choice properties to update.
+    - name: updateMask
+      type: STRING
+      REQUIRED: false
+      comment: The fields that should be updated. At least one field must be specified. The root `properties` is implied and should not be specified. A single `*` can be used as a short-hand for updating every field.
+  GoogleAppsDriveLabelsV2WriteControl:
+    - name: requiredRevisionId
+      type: STRING
+      REQUIRED: false
+      comment: The revision ID of the label that the write request will be applied to. If this isn't the latest revision of the label, the request will not be processed and will return a 400 Bad Request error.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelResponse:
+    - name: responses
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseResponse)"
+      REQUIRED: false
+      comment: The reply of the updates. This maps 1:1 with the updates, although responses to some requests may be empty.
+    - name: updatedLabel
+      type: STRUCT(GoogleAppsDriveLabelsV2Label)
+      REQUIRED: false
+      comment: The label after updates were applied. This is only set if `include_label_in_response` is `true` and there were no errors.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseResponse:
+    - name: createField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseCreateFieldResponse)
+      REQUIRED: false
+      comment: Creates a field.
+    - name: createSelectionChoice
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseCreateSelectionChoiceResponse)
+      REQUIRED: false
+      comment: Creates a selection list option to add to a selection field.
+    - name: deleteField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseDeleteFieldResponse)
+      REQUIRED: false
+      comment: Deletes a field from the label.
+    - name: deleteSelectionChoice
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseDeleteSelectionChoiceResponse)
+      REQUIRED: false
+      comment: Deletes a choice from a selection field.
+    - name: disableField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseDisableFieldResponse)
+      REQUIRED: false
+      comment: Disables field.
+    - name: disableSelectionChoice
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseDisableSelectionChoiceResponse)
+      REQUIRED: false
+      comment: Disables a choice within a selection field.
+    - name: enableField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseEnableFieldResponse)
+      REQUIRED: false
+      comment: Enables field.
+    - name: enableSelectionChoice
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseEnableSelectionChoiceResponse)
+      REQUIRED: false
+      comment: Enables a choice within a selection field.
+    - name: updateField
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateFieldPropertiesResponse)
+      REQUIRED: false
+      comment: Updates basic properties of a field.
+    - name: updateFieldType
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateFieldTypeResponse)
+      REQUIRED: false
+      comment: Updates field type and/or type options.
+    - name: updateLabel
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateLabelPropertiesResponse)
+      REQUIRED: false
+      comment: Updates basic properties of a label.
+    - name: updateSelectionChoiceProperties
+      type: STRUCT(GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponse)
+      REQUIRED: false
+      comment: Updates a choice within a selection field.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseCreateFieldResponse:
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: The field of the created field. When left blank in a create request, a key will be autogenerated and can be identified here.
+    - name: priority
+      type: INT
+      REQUIRED: false
+      comment: The priority of the created field. The priority may change from what was specified to assure contiguous priorities between fields (1-n).
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseCreateSelectionChoiceResponse:
+    - name: fieldId
+      type: STRING
+      REQUIRED: false
+      comment: The server-generated ID of the field.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: The server-generated ID of the created choice within the field.
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateFieldPropertiesResponse:
+    - name: priority
+      type: INT
+      REQUIRED: false
+      comment: The priority of the updated field. The priority may change from what was specified to assure contiguous priorities between fields (1-n).
+  GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponse:
+    - name: priority
+      type: INT
+      REQUIRED: false
+      comment: The priority of the updated choice. The priority may change from what was specified to assure contiguous priorities between choices (1-n).
+  GoogleAppsDriveLabelsV2Label:
+    - name: appliedCapabilities
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelAppliedCapabilities)
+      REQUIRED: false
+      comment: Output only. The capabilities related to this label on applied metadata.
+    - name: appliedLabelPolicy
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelAppliedLabelPolicy)
+      REQUIRED: false
+      comment: Output only. Behavior of this label when it's applied to Drive items.
+    - name: createTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this label was created.
+    - name: creator
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who created this label.
+    - name: customer
+      type: STRING
+      REQUIRED: false
+      comment: "Output only. The customer this label belongs to. For example: `customers/123abc789`."
+    - name: disableTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this label was disabled. This value has no meaning when the label isn't disabled.
+    - name: disabler
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who disabled this label. This value has no meaning when the label isn't disabled.
+    - name: displayHints
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelDisplayHints)
+      REQUIRED: false
+      comment: Output only. UI display hints for rendering the label.
+    - name: enabledAppSettings
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelEnabledAppSettings)
+      REQUIRED: false
+      comment: Optional. The `EnabledAppSettings` for this Label.
+    - name: fields
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2Field)"
+      REQUIRED: false
+      comment: List of fields in descending priority order.
+    - name: id
+      type: STRING
+      REQUIRED: false
+      comment: "Output only. Globally unique identifier of this label. ID makes up part of the label `name`, but unlike `name`, ID is consistent between revisions. Matches the regex: `([a-zA-Z0-9])+`."
+    - name: labelType
+      type: STRING
+      REQUIRED: false
+      comment: Required. The type of label.
+    - name: learnMoreUri
+      type: STRING
+      REQUIRED: false
+      comment: Custom URL to present to users to allow them to learn more about this label and how it should be used.
+    - name: lifecycle
+      type: STRUCT(GoogleAppsDriveLabelsV2Lifecycle)
+      REQUIRED: false
+      comment: Output only. The lifecycle state of the label including whether it's published, deprecated, and has draft changes.
+    - name: lockStatus
+      type: STRUCT(GoogleAppsDriveLabelsV2LockStatus)
+      REQUIRED: false
+      comment: Output only. The `LockStatus` of this label.
+    - name: name
+      type: STRING
+      REQUIRED: false
+      comment: "Output only. Resource name of the label. Will be in the form of either: `labels/{id}` or `labels/{id}@{revision_id}` depending on the request. See `id` and `revision_id` below."
+    - name: properties
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelProperties)
+      REQUIRED: false
+      comment: Required. The basic properties of the label.
+    - name: publishTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this label was published. This value has no meaning when the label isn't published.
+    - name: publisher
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who published this label. This value has no meaning when the label isn't published.>>
+    - name: revisionCreateTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this label revision was created.
+    - name: revisionCreator
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user who created this label revision.
+    - name: revisionId
+      type: STRING
+      REQUIRED: false
+      comment: "Output only. Revision ID of the label. Revision ID might be part of the label `name` depending on the request issued. A new revision is created whenever revisioned properties of a label are changed. Matches the regex: `([a-zA-Z0-9])+`."
+    - name: schemaCapabilities
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelSchemaCapabilities)
+      REQUIRED: false
+      comment: Output only. The capabilities the user has on this label.
+  GoogleAppsDriveLabelsV2LabelAppliedCapabilities:
+    - name: canApply
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can apply this label to items.
+    - name: canRead
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can read applied metadata related to this label.
+    - name: canRemove
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can remove this label from items.
+  GoogleAppsDriveLabelsV2LabelAppliedLabelPolicy:
+    - name: copyMode
+      type: STRING
+      REQUIRED: false
+      comment: Indicates how the applied label and field values should be copied when a Drive item is copied.
+  GoogleAppsDriveLabelsV2LabelDisplayHints:
+    - name: disabled
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the label should be shown in the UI as disabled.
+    - name: hiddenInSearch
+      type: BOOL
+      REQUIRED: false
+      comment: This label should be hidden in the search menu when searching for Drive items.
+    - name: priority
+      type: STRING
+      REQUIRED: false
+      comment: The order to display labels in a list.
+    - name: shownInApply
+      type: BOOL
+      REQUIRED: false
+      comment: This label should be shown in the apply menu when applying values to a Drive item.
+  GoogleAppsDriveLabelsV2LabelEnabledAppSettings:
+    - name: enabledApps
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2LabelEnabledAppSettingsEnabledApp)"
+      REQUIRED: false
+      comment: Optional. The list of apps where the label can be used.
+  GoogleAppsDriveLabelsV2LabelEnabledAppSettingsEnabledApp:
+    - name: app
+      type: STRING
+      REQUIRED: false
+      comment: Optional. The name of the app.
+  GoogleAppsDriveLabelsV2LabelSchemaCapabilities:
+    - name: canDelete
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can delete this label. The user must have permission and the label must be disabled.
+    - name: canDisable
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can disable this label. The user must have permission and this label must not already be disabled.
+    - name: canEnable
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can enable this label. The user must have permission and this label must be disabled.
+    - name: canUpdate
+      type: BOOL
+      REQUIRED: false
+      comment: Whether the user can change this label.
+  GoogleAppsDriveLabelsV2DisableLabelRequest:
+    - name: disabledPolicy
+      type: STRUCT(GoogleAppsDriveLabelsV2LifecycleDisabledPolicy)
+      REQUIRED: false
+      comment: Disabled policy to use.
+    - name: languageCode
+      type: STRING
+      REQUIRED: false
+      comment: The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.
+    - name: updateMask
+      type: STRING
+      REQUIRED: false
+      comment: The fields that should be updated. At least one field must be specified. The root `disabled_policy` is implied and should not be specified. A single `*` can be used as a short-hand for updating every field.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access.
+    - name: writeControl
+      type: STRUCT(GoogleAppsDriveLabelsV2WriteControl)
+      REQUIRED: false
+      comment: Provides control over how write requests are executed. Defaults to unset, which means the last write wins.
+  GoogleAppsDriveLabelsV2EnableLabelRequest:
+    - name: languageCode
+      type: STRING
+      REQUIRED: false
+      comment: The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access.
+    - name: writeControl
+      type: STRUCT(GoogleAppsDriveLabelsV2WriteControl)
+      REQUIRED: false
+      comment: Provides control over how write requests are executed. Defaults to unset, which means the last write wins.
+  GoogleAppsDriveLabelsV2FieldLimits:
+    - name: dateLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2DateLimits)
+      REQUIRED: false
+      comment: Date field limits.
+    - name: integerLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2IntegerLimits)
+      REQUIRED: false
+      comment: Integer field limits.
+    - name: longTextLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2LongTextLimits)
+      REQUIRED: false
+      comment: Long text field limits.
+    - name: maxDescriptionLength
+      type: INT
+      REQUIRED: false
+      comment: Limits for field description, also called help text.
+    - name: maxDisplayNameLength
+      type: INT
+      REQUIRED: false
+      comment: Limits for field title.
+    - name: maxIdLength
+      type: INT
+      REQUIRED: false
+      comment: Maximum length for the id.
+    - name: selectionLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2SelectionLimits)
+      REQUIRED: false
+      comment: Selection field limits.
+    - name: textLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2TextLimits)
+      REQUIRED: false
+      comment: The relevant limits for the specified Field.Type. Text field limits.
+    - name: userLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2UserLimits)
+      REQUIRED: false
+      comment: User field limits.
+  GoogleAppsDriveLabelsV2IntegerLimits:
+    - name: maxValue
+      type: STRING
+      REQUIRED: false
+      comment: Maximum value for an integer field type.
+    - name: minValue
+      type: STRING
+      REQUIRED: false
+      comment: Minimum value for an integer field type.
+  GoogleAppsDriveLabelsV2LongTextLimits:
+    - name: maxLength
+      type: INT
+      REQUIRED: false
+      comment: Maximum length allowed for a long text field type.
+    - name: minLength
+      type: INT
+      REQUIRED: false
+      comment: Minimum length allowed for a long text field type.
+  GoogleAppsDriveLabelsV2SelectionLimits:
+    - name: listLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2ListLimits)
+      REQUIRED: false
+      comment: Limits for list-variant of a field type.
+    - name: maxChoices
+      type: INT
+      REQUIRED: false
+      comment: Maximum number of choices.
+    - name: maxDeletedChoices
+      type: INT
+      REQUIRED: false
+      comment: Maximum number of deleted choices.
+    - name: maxDisplayNameLength
+      type: INT
+      REQUIRED: false
+      comment: Maximum length for display name.
+    - name: maxIdLength
+      type: INT
+      REQUIRED: false
+      comment: Maximum ID length for a selection option.
+  GoogleAppsDriveLabelsV2ListLimits:
+    - name: maxEntries
+      type: INT
+      REQUIRED: false
+      comment: Maximum number of values allowed for the field type.
+  GoogleAppsDriveLabelsV2TextLimits:
+    - name: maxLength
+      type: INT
+      REQUIRED: false
+      comment: Maximum length allowed for a text field type.
+    - name: minLength
+      type: INT
+      REQUIRED: false
+      comment: Minimum length allowed for a text field type.
+  GoogleAppsDriveLabelsV2UserLimits:
+    - name: listLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2ListLimits)
+      REQUIRED: false
+      comment: Limits for list-variant of a field type.
+  GoogleAppsDriveLabelsV2LabelLimits:
+    - name: fieldLimits
+      type: STRUCT(GoogleAppsDriveLabelsV2FieldLimits)
+      REQUIRED: false
+      comment: The limits for fields.
+    - name: maxDeletedFields
+      type: INT
+      REQUIRED: false
+      comment: The maximum number of published fields that can be deleted.
+    - name: maxDescriptionLength
+      type: INT
+      REQUIRED: false
+      comment: The maximum number of characters allowed for the description.
+    - name: maxDraftRevisions
+      type: INT
+      REQUIRED: false
+      comment: The maximum number of draft revisions that will be kept before deleting old drafts.
+    - name: maxFields
+      type: INT
+      REQUIRED: false
+      comment: The maximum number of fields allowed within the label.
+    - name: maxTitleLength
+      type: INT
+      REQUIRED: false
+      comment: The maximum number of characters allowed for the title.
+    - name: name
+      type: STRING
+      REQUIRED: false
+      comment: Resource name.
+  GoogleAppsDriveLabelsV2LabelLock:
+    - name: capabilities
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelLockCapabilities)
+      REQUIRED: false
+      comment: Output only. The user's capabilities on this label lock.
+    - name: choiceId
+      type: STRING
+      REQUIRED: false
+      comment: The ID of the selection field choice that should be locked. If present, `field_id` must also be present.
+    - name: createTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. The time this label lock was created.
+    - name: creator
+      type: STRUCT(GoogleAppsDriveLabelsV2UserInfo)
+      REQUIRED: false
+      comment: Output only. The user whose credentials were used to create the label lock. Not present if no user was responsible for creating the label lock.
+    - name: deleteTime
+      type: STRING
+      REQUIRED: false
+      comment: Output only. A timestamp indicating when this label lock was scheduled for deletion. Present only if this label lock is in the `DELETING` state.
+    - name: fieldId
+      type: STRING
+      REQUIRED: false
+      comment: The ID of the field that should be locked. Empty if the whole label should be locked.
+    - name: name
+      type: STRING
+      REQUIRED: false
+      comment: Output only. Resource name of this label lock.
+    - name: state
+      type: STRING
+      REQUIRED: false
+      comment: Output only. This label lock's state.
+  GoogleAppsDriveLabelsV2LabelLockCapabilities:
+    - name: canViewPolicy
+      type: BOOL
+      REQUIRED: false
+      comment: True if the user is authorized to view the policy.
+  GoogleAppsDriveLabelsV2ListLabelLocksResponse:
+    - name: labelLocks
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2LabelLock)"
+      REQUIRED: false
+      comment: Label locks.
+    - name: nextPageToken
+      type: STRING
+      REQUIRED: false
+      comment: The token of the next page in the response.
+  GoogleAppsDriveLabelsV2ListLabelPermissionsResponse:
+    - name: labelPermissions
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2LabelPermission)"
+      REQUIRED: false
+      comment: Label permissions.
+    - name: nextPageToken
+      type: STRING
+      REQUIRED: false
+      comment: The token of the next page in the response.
+  GoogleAppsDriveLabelsV2ListLabelsResponse:
+    - name: labels
+      type: "[]STRUCT(GoogleAppsDriveLabelsV2Label)"
+      REQUIRED: false
+      comment: Labels.
+    - name: nextPageToken
+      type: STRING
+      REQUIRED: false
+      comment: The token of the next page in the response.
+  GoogleAppsDriveLabelsV2PublishLabelRequest:
+    - name: languageCode
+      type: STRING
+      REQUIRED: false
+      comment: The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access.
+    - name: writeControl
+      type: STRUCT(GoogleAppsDriveLabelsV2WriteControl)
+      REQUIRED: false
+      comment: Provides control over how write requests are executed. Defaults to unset, which means the last write wins.
+  GoogleAppsDriveLabelsV2UpdateLabelCopyModeRequest:
+    - name: copyMode
+      type: STRING
+      REQUIRED: false
+      comment: Required. Indicates how the applied label and field values should be copied when a Drive item is copied.
+    - name: languageCode
+      type: STRING
+      REQUIRED: false
+      comment: The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access.
+    - name: view
+      type: STRING
+      REQUIRED: false
+      comment: When specified, only certain fields belonging to the indicated view will be returned.
+  GoogleAppsDriveLabelsV2UpdateLabelEnabledAppSettingsRequest:
+    - name: enabledAppSettings
+      type: STRUCT(GoogleAppsDriveLabelsV2LabelEnabledAppSettings)
+      REQUIRED: false
+      comment: Required. The new `EnabledAppSettings` value for the label.
+    - name: languageCode
+      type: STRING
+      REQUIRED: false
+      comment: Optional. The BCP-47 language code to use for evaluating localized field labels. When not specified, values in the default configured language will be used.
+    - name: useAdminAccess
+      type: BOOL
+      REQUIRED: false
+      comment: Optional. Set to `true` in order to use the user's admin credentials. The server will verify the user is an admin for the label before allowing access.
+    - name: view
+      type: STRING
+      REQUIRED: false
+      comment: Optional. When specified, only certain fields belonging to the indicated view will be returned.

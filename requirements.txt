@@ -1,0 +1,4 @@
+swytchcode-runtime
+google-genai
+streamlit
+python-dotenv

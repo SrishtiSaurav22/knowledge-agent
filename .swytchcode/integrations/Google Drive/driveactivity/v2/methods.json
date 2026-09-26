@@ -1,0 +1,9 @@
+{
+  "methods": [
+    {
+      "method_uuid": "",
+      "method_name": "Query past activity in Google Drive",
+      "canonical_id": "driveactivity.activityquery.create"
+    }
+  ]
+}

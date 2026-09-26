@@ -1,0 +1,1973 @@
+VERSION: 2.0.2
+DEFAULTS:
+  bearer_token: BEARER <TOKEN>
+  basic_auth: Basic <BASE64>
+  w_base_url: https://api.notion.com
+METHODS:
+  notion.user.get:
+    SUMMARY: Retrieve a user
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/users/{user_id}
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - user_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+          FORMAT: uuid
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: ANY
+        RETURNVAR: notion_user_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(get_user_faf0bf51_Error400)
+        STATUS: 400
+        WHEN: 400 (HTTP 400)
+    CANONICAL_ID: notion.user.get
+  notion.user.list:
+    SUMMARY: List all users
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/users
+      HEADERS:
+        Authorization: bearer_token
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY:
+      - bearerAuth:
+          type: http
+          scheme: bearer
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - start_cursor:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - page_size:
+          TYPE: INT
+          REQUIRED: false
+          LOCATION: query
+          DEFAULT: 100
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(get_users_5908a9e4_get_v1_users_6d5b7f5cResponse200)
+        RETURNVAR: notion_user_list
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(get_users_5908a9e4_Error400)
+        STATUS: 400
+        WHEN: 400 (HTTP 400)
+    CANONICAL_ID: notion.user.list
+  notion.me.list:
+    SUMMARY: Retrieve your token's bot user
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/users/me
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(get_self_faef6bdc_get_v1_users_me_7952683dResponse200)
+        RETURNVAR: notion_me_list
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(get_self_faef6bdc_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.me.list
+  notion.search.create:
+    SUMMARY: Search by title
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v1/search
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(post_search_1e1f70e_post_v1_search_13218f60Request)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(post_search_1e1f70e_post_v1_search_13218f60Request)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(post_search_1e1f70e_post_v1_search_13218f60Response200)
+        RETURNVAR: notion_search_create
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(post_search_1e1f70e_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.search.create
+  notion.children.get:
+    SUMMARY: Retrieve block children
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/blocks/{block_id}/children
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - block_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - start_cursor:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - page_size:
+          TYPE: INT
+          REQUIRED: false
+          LOCATION: query
+          DEFAULT: 100
+          FORMAT: int32
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(get_block_children_1667a633_get_v1_blocks_block_id_children_1897b4deResponse200)
+        RETURNVAR: notion_children_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(get_block_children_1667a633_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.children.get
+  notion.children.update:
+    SUMMARY: Append block children
+    HTTP:
+      METHOD: PATCH
+      ENDPOINT: /v1/blocks/{block_id}/children
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(patch_block_children_106105a3_patch_v1_blocks_block_id_children_1897b4deRequest)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - block_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(patch_block_children_106105a3_patch_v1_blocks_block_id_children_1897b4deRequest)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(patch_block_children_106105a3_patch_v1_blocks_block_id_children_1897b4deResponse200)
+        RETURNVAR: notion_children_update
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(patch_block_children_106105a3_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.children.update
+  notion.block.get:
+    SUMMARY: Retrieve a block
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/blocks/{block_id}
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - block_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(retrieve_a_block_6ff36171_get_v1_blocks_block_id_28326cc6Response200)
+        RETURNVAR: notion_block_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(retrieve_a_block_6ff36171_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.block.get
+  notion.block.update:
+    SUMMARY: Update a block
+    HTTP:
+      METHOD: PATCH
+      ENDPOINT: /v1/blocks/{block_id}
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(update_a_block_6dee0d4e_patch_v1_blocks_block_id_28326cc6Request)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - block_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(update_a_block_6dee0d4e_patch_v1_blocks_block_id_28326cc6Request)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(update_a_block_6dee0d4e_patch_v1_blocks_block_id_28326cc6Response200)
+        RETURNVAR: notion_block_update
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(update_a_block_6dee0d4e_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.block.update
+  notion.block.delete:
+    SUMMARY: Delete a block
+    HTTP:
+      METHOD: DELETE
+      ENDPOINT: /v1/blocks/{block_id}
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - block_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(delete_a_block_b2a2911e_delete_v1_blocks_block_id_28326cc6Response200)
+        RETURNVAR: notion_block_delete
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(delete_a_block_b2a2911e_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.block.delete
+  notion.page.get:
+    SUMMARY: Retrieve a page
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/pages/{page_id}
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - page_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - filter_properties:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(retrieve_a_page_12efd5c3_get_v1_pages_page_id_2c6852aResponse200)
+        RETURNVAR: notion_page_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(retrieve_a_page_12efd5c3_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.page.get
+  notion.page.update:
+    SUMMARY: Update page properties
+    HTTP:
+      METHOD: PATCH
+      ENDPOINT: /v1/pages/{page_id}
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - page_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(patch_page_e614087f_patch_v1_pages_page_id_2c6852aResponse200)
+        RETURNVAR: notion_page_update
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(patch_page_e614087f_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.page.update
+  notion.page.create:
+    SUMMARY: Create a page
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v1/pages
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(post_page_ff865fb5_post_v1_pages_6cf72cdaRequest)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(post_page_ff865fb5_post_v1_pages_6cf72cdaRequest)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(post_page_ff865fb5_post_v1_pages_6cf72cdaResponse200)
+        RETURNVAR: notion_page_create
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(post_page_ff865fb5_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.page.create
+  notion.property.get:
+    SUMMARY: Retrieve a page property item
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/pages/{page_id}/properties/{property_id}
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - page_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - property_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - page_size:
+          TYPE: INT
+          REQUIRED: false
+          LOCATION: query
+          FORMAT: int32
+      - start_cursor:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: ANY
+        RETURNVAR: notion_property_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(retrieve_a_page_property_d7c8bb95_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.property.get
+  notion.comment.list:
+    SUMMARY: Retrieve comments
+    DESC: Retrieves a list of un-resolved [Comment objects](ref:comment-object) from a page or block.
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/comments
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - block_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: query
+      - start_cursor:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - page_size:
+          TYPE: INT
+          REQUIRED: false
+          LOCATION: query
+          FORMAT: int32
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: ANY
+        RETURNVAR: notion_comment_list
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(retrieve_a_comment_8e2c7839_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.comment.list
+  notion.comment.create:
+    SUMMARY: Create comment
+    DESC: Creates a comment in a page or existing discussion thread.
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v1/comments
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(create_a_comment_9b93faa7_post_v1_comments_bb10a790Request)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - body:
+          TYPE: STRUCT(create_a_comment_9b93faa7_post_v1_comments_bb10a790Request)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: ANY
+        RETURNVAR: notion_comment_create
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(create_a_comment_9b93faa7_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.comment.create
+  notion.query.create:
+    SUMMARY: Query a data source
+    DESC: Query a data source (database) using filters and sorts
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v1/data_sources/{data_source_id}/query
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(query_data_source_5412a200_post_v1_data_sources_data_source_id_query_4ca3a029Request)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - data_source_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - filter_properties:
+          TYPE: "[]STRING"
+          REQUIRED: false
+          LOCATION: query
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(query_data_source_5412a200_post_v1_data_sources_data_source_id_query_4ca3a029Request)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(query_data_source_5412a200_post_v1_data_sources_data_source_id_query_4ca3a029Response200)
+        RETURNVAR: notion_query_create
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(query_data_source_5412a200_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.query.create
+  notion.data_source.get:
+    SUMMARY: Retrieve a data source
+    DESC: Retrieve metadata and schema for a data source
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/data_sources/{data_source_id}
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - data_source_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(retrieve_a_data_source_e19def7e_get_v1_data_sources_data_source_id_84366184Response200)
+        RETURNVAR: notion_data_source_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(retrieve_a_data_source_e19def7e_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.data_source.get
+  notion.data_source.update:
+    SUMMARY: Update a data source
+    DESC: Update properties of a data source
+    HTTP:
+      METHOD: PATCH
+      ENDPOINT: /v1/data_sources/{data_source_id}
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(update_a_data_source_8db34d1b_patch_v1_data_sources_data_source_id_84366184Request)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - data_source_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(update_a_data_source_8db34d1b_patch_v1_data_sources_data_source_id_84366184Request)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(update_a_data_source_8db34d1b_patch_v1_data_sources_data_source_id_84366184Response200)
+        RETURNVAR: notion_data_source_update
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(update_a_data_source_8db34d1b_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.data_source.update
+  notion.data_source.create:
+    SUMMARY: Create a data source
+    DESC: Create a new data source (database)
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v1/data_sources
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(create_a_data_source_82bcf8ec_post_v1_data_sources_13a2dd67Request)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(create_a_data_source_82bcf8ec_post_v1_data_sources_13a2dd67Request)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(create_a_data_source_82bcf8ec_post_v1_data_sources_13a2dd67Response200)
+        RETURNVAR: notion_data_source_create
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(create_a_data_source_82bcf8ec_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.data_source.create
+  notion.template.get:
+    SUMMARY: List templates in a data source
+    DESC: List available templates for a data source
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/data_sources/{data_source_id}/templates
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - data_source_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - start_cursor:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: query
+      - page_size:
+          TYPE: INT
+          REQUIRED: false
+          LOCATION: query
+          DEFAULT: 100
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(list_data_source_templates_91fded62_get_v1_data_sources_data_source_id_templates_34251382Response200)
+        RETURNVAR: notion_template_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(list_data_source_templates_91fded62_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.template.get
+  notion.databas.get:
+    SUMMARY: Retrieve a database
+    DESC: Retrieves a database object using the ID specified. Returns database metadata including the list of data source IDs contained in the database.
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/databases/{database_id}
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - database_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+    RETURNS:
+      - RETURNTYPE: STRUCT(retrieve_a_database_19c71bdb_get_v1_databases_database_id_aed3eb5aResponse200)
+        RETURNVAR: notion_databas_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(retrieve_a_database_19c71bdb_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.databas.get
+  notion.move.create:
+    SUMMARY: Move a page
+    DESC: Move a page to a different parent location
+    HTTP:
+      METHOD: POST
+      ENDPOINT: /v1/pages/{page_id}/move
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(move_page_66026186_post_v1_pages_page_id_move_522a7c30Request)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - page_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+          FORMAT: uuid
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: false
+          LOCATION: header
+          DEFAULT: "2025-09-03"
+      - body:
+          TYPE: STRUCT(move_page_66026186_post_v1_pages_page_id_move_522a7c30Request)
+          REQUIRED: false
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(move_page_66026186_post_v1_pages_page_id_move_522a7c30Response200)
+        RETURNVAR: notion_move_create
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(move_page_66026186_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+    CANONICAL_ID: notion.move.create
+  notion.markdown.get:
+    SUMMARY: Retrieve a page as Markdown
+    DESC: Retrieve the full content of a Notion page rendered as enhanced Markdown. Designed for agentic and developer tools that work natively with Markdown instead of the block JSON returned by Retrieve block children.
+    HTTP:
+      METHOD: GET
+      ENDPOINT: /v1/pages/{page_id}/markdown
+      HEADERS: {}
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - page_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+          FORMAT: uuid
+      - include_transcript:
+          TYPE: BOOL
+          REQUIRED: false
+          LOCATION: query
+          DEFAULT: false
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: header
+          DEFAULT: "2026-03-11"
+    RETURNS:
+      - RETURNTYPE: STRUCT(retrieve_page_markdown_7e9eed45_get_v1_pages_page_id_markdown_e00e6ffcResponse200)
+        RETURNVAR: notion_markdown_get
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(retrieve_page_markdown_7e9eed45_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+      - TYPE: STRUCT(retrieve_page_markdown_7e9eed45_Error403)
+        STATUS: 403
+        WHEN: The integration lacks the read/update content capability required for this page. (HTTP 403)
+      - TYPE: STRUCT(retrieve_page_markdown_7e9eed45_Error404)
+        STATUS: 404
+        WHEN: Page not found or not shared with the integration. (HTTP 404)
+      - TYPE: STRUCT(retrieve_page_markdown_7e9eed45_Error429)
+        STATUS: 429
+        WHEN: Rate limited. (HTTP 429)
+    CANONICAL_ID: notion.markdown.get
+  notion.markdown.update:
+    SUMMARY: Update a page's content as Markdown
+    DESC: Update the content of a Notion page using enhanced Markdown. Prefer `replace_content` to overwrite the whole page or `update_content` for targeted find-and-replace edits.
+    HTTP:
+      METHOD: PATCH
+      ENDPOINT: /v1/pages/{page_id}/markdown
+      HEADERS:
+        Content-Type: application/json
+      CONTENT_TYPE: application/json
+      ACCEPT: application/json
+      BODY:
+        TYPE: STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest)
+    SECURITY: []
+    EXECUTION:
+      KIND: http
+      MODE: sync
+    INPUTS:
+      - page_id:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: path
+          FORMAT: uuid
+      - Notion-Version:
+          TYPE: STRING
+          REQUIRED: true
+          LOCATION: header
+          DEFAULT: "2026-03-11"
+      - body:
+          TYPE: STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest)
+          REQUIRED: true
+          LOCATION: body
+          CONTENT_TYPE: application/json
+    RETURNS:
+      - RETURNTYPE: STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcResponse200)
+        RETURNVAR: notion_markdown_update
+        STATUS: 200
+    ERRORS:
+      - TYPE: STRUCT(update_page_markdown_2ab44ae2_Error400)
+        STATUS: 400
+        WHEN: Bad request (HTTP 400)
+      - TYPE: STRUCT(update_page_markdown_2ab44ae2_Error403)
+        STATUS: 403
+        WHEN: The integration lacks the read/update content capability required for this page. (HTTP 403)
+      - TYPE: STRUCT(update_page_markdown_2ab44ae2_Error404)
+        STATUS: 404
+        WHEN: Page not found or not shared with the integration. (HTTP 404)
+      - TYPE: STRUCT(update_page_markdown_2ab44ae2_Error409)
+        STATUS: 409
+        WHEN: Conflict (e.g. row limit exceeded). (HTTP 409)
+      - TYPE: STRUCT(update_page_markdown_2ab44ae2_Error429)
+        STATUS: 429
+        WHEN: Rate limited. (HTTP 429)
+    CANONICAL_ID: notion.markdown.update
+STRUCTS:
+  richTextRequest_text_link:
+    - name: url
+      TYPE: STRING
+      REQUIRED: true
+  richTextRequest_text:
+    - name: content
+      TYPE: STRING
+      REQUIRED: true
+    - name: link
+      TYPE: STRUCT(richTextRequest_text_link)
+      REQUIRED: false
+  richTextRequest:
+    - name: text
+      TYPE: STRUCT(richTextRequest_text)
+      REQUIRED: true
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+      ENUM:
+        - text
+  pageIdParentRequest:
+    - name: page_id
+      TYPE: STRING
+      REQUIRED: true
+      FORMAT: uuid
+  dataSourceIdParentRequest:
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+    - name: database_id
+      TYPE: STRING
+      REQUIRED: true
+      FORMAT: uuid
+  parentRequest_variant_2:
+    - name: type
+      TYPE: ANY
+      REQUIRED: true
+  parentRequest:
+    - name: _COMPOSITION
+      TYPE: ONE_OF
+      REQUIRED: false
+    - name: variant_pageIdParentRequest
+      TYPE: STRUCT(pageIdParentRequest)
+      REQUIRED: false
+    - name: variant_dataSourceIdParentRequest
+      TYPE: STRUCT(dataSourceIdParentRequest)
+      REQUIRED: false
+    - name: variant_2
+      TYPE: STRUCT(parentRequest_variant_2)
+      REQUIRED: false
+  movePageParentRequest_variant_0:
+    - name: type
+      TYPE: ANY
+      REQUIRED: true
+    - name: page_id
+      TYPE: STRING
+      REQUIRED: true
+      FORMAT: uuid
+  movePageParentRequest_variant_1:
+    - name: type
+      TYPE: ANY
+      REQUIRED: true
+    - name: database_id
+      TYPE: STRING
+      REQUIRED: true
+      FORMAT: uuid
+  movePageParentRequest_variant_2:
+    - name: type
+      TYPE: ANY
+      REQUIRED: true
+  movePageParentRequest:
+    - name: _COMPOSITION
+      TYPE: ONE_OF
+      REQUIRED: false
+    - name: variant_0
+      TYPE: STRUCT(movePageParentRequest_variant_0)
+      REQUIRED: false
+    - name: variant_1
+      TYPE: STRUCT(movePageParentRequest_variant_1)
+      REQUIRED: false
+    - name: variant_2
+      TYPE: STRUCT(movePageParentRequest_variant_2)
+      REQUIRED: false
+  sortObject:
+    - name: property
+      TYPE: STRING
+      REQUIRED: true
+    - name: direction
+      TYPE: STRING
+      REQUIRED: true
+      ENUM:
+        - ascending
+        - descending
+  paragraphBlockRequest_paragraph:
+    - name: rich_text
+      TYPE: "[]STRUCT(richTextRequest)"
+      REQUIRED: true
+      MAX_ITEMS: 100
+  paragraphBlockRequest:
+    - name: paragraph
+      TYPE: STRUCT(paragraphBlockRequest_paragraph)
+      REQUIRED: false
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+      ENUM:
+        - paragraph
+  bulletedListItemBlockRequest_bulleted_list_item:
+    - name: rich_text
+      TYPE: "[]STRUCT(richTextRequest)"
+      REQUIRED: true
+      MAX_ITEMS: 100
+  bulletedListItemBlockRequest:
+    - name: bulleted_list_item
+      TYPE: STRUCT(bulletedListItemBlockRequest_bulleted_list_item)
+      REQUIRED: false
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+      ENUM:
+        - bulleted_list_item
+  blockObjectRequest:
+    - name: _COMPOSITION
+      TYPE: ANY_OF
+      REQUIRED: false
+    - name: variant_paragraphBlockRequest
+      TYPE: STRUCT(paragraphBlockRequest)
+      REQUIRED: false
+    - name: variant_bulletedListItemBlockRequest
+      TYPE: STRUCT(bulletedListItemBlockRequest)
+      REQUIRED: false
+  get_user_faf0bf51_Error400:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  get_users_5908a9e4_get_v1_users_6d5b7f5cResponse200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  get_users_5908a9e4_Error400:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  get_self_faef6bdc_get_v1_users_me_7952683dResponse200_avatar_url:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot_owner_user_avatar_url:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot_owner_user_person:
+    - name: email
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: christine@makenotion.com
+  get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot_owner_user:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: user
+    - name: id
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: 5389a034-eb5c-47b5-8a9e-f79c99ef166c
+    - name: name
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: christine makenotion
+    - name: avatar_url
+      TYPE: STRUCT(get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot_owner_user_avatar_url)
+      REQUIRED: false
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: person
+    - name: person
+      TYPE: STRUCT(get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot_owner_user_person)
+      REQUIRED: false
+  get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot_owner:
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: user
+    - name: user
+      TYPE: STRUCT(get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot_owner_user)
+      REQUIRED: false
+  get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot:
+    - name: owner
+      TYPE: STRUCT(get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot_owner)
+      REQUIRED: false
+  get_self_faef6bdc_get_v1_users_me_7952683dResponse200:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: user
+    - name: id
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: 16d84278-ab0e-484c-9bdd-b35da3bd8905
+    - name: name
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: pied piper
+    - name: avatar_url
+      TYPE: STRUCT(get_self_faef6bdc_get_v1_users_me_7952683dResponse200_avatar_url)
+      REQUIRED: false
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: bot
+    - name: bot
+      TYPE: STRUCT(get_self_faef6bdc_get_v1_users_me_7952683dResponse200_bot)
+      REQUIRED: false
+  get_self_faef6bdc_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  post_search_1e1f70e_post_v1_search_13218f60Request_sort:
+    - name: direction
+      TYPE: STRING
+      REQUIRED: false
+      comment: The direction to sort. Possible values include `ascending` and `descending`.
+    - name: timestamp
+      TYPE: STRING
+      REQUIRED: false
+      comment: The name of the timestamp to sort against. Possible values include `last_edited_time`.
+  post_search_1e1f70e_post_v1_search_13218f60Request_filter:
+    - name: value
+      TYPE: STRING
+      REQUIRED: false
+      ENUM:
+        - page
+        - data_source
+      comment: "The value of the property to filter the results by.  Possible values for object type include `page` or `data_source`.  **Limitation**: Currently the only filter allowed is `object` which will filter by type of object (either `page` or `data_source`)"
+    - name: property
+      TYPE: STRING
+      REQUIRED: false
+      comment: "The name of the property to filter by. Currently the only property you can filter by is the object type.  Possible values include `object`.   Limitation: Currently the only filter allowed is `object` which will filter by type of object (either `page` or `data_source`)"
+  post_search_1e1f70e_post_v1_search_13218f60Request:
+    - name: query
+      TYPE: STRING
+      REQUIRED: false
+      comment: The text that the API compares page and database titles against.
+    - name: sort
+      TYPE: STRUCT(post_search_1e1f70e_post_v1_search_13218f60Request_sort)
+      REQUIRED: false
+      comment: A set of criteria, `direction` and `timestamp` keys, that orders the results. The **only** supported timestamp value is `"last_edited_time"`. Supported `direction` values are `"ascending"` and `"descending"`. If `sort` is not provided, then the most recently edited results are returned first.
+    - name: filter
+      TYPE: STRUCT(post_search_1e1f70e_post_v1_search_13218f60Request_filter)
+      REQUIRED: false
+      comment: A set of criteria, `value` and `property` keys, that limits the results to either only pages or only data sources. Possible `value` values are `"page"` or `"data_source"`. The only supported `property` value is `"object"`.
+    - name: start_cursor
+      TYPE: STRING
+      REQUIRED: false
+      comment: A `cursor` value returned in a previous response that If supplied, limits the response to results starting after the `cursor`. If not supplied, then the first page of results is returned. Refer to [pagination](https://developers.notion.com/reference/intro#pagination) for more details.
+    - name: page_size
+      TYPE: INT
+      REQUIRED: false
+      FORMAT: int32
+      DEFAULT: 100
+      comment: "The number of items from the full list to include in the response. Maximum: `100`."
+  post_search_1e1f70e_post_v1_search_13218f60Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  post_search_1e1f70e_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  get_block_children_1667a633_get_v1_blocks_block_id_children_1897b4deResponse200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  get_block_children_1667a633_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  patch_block_children_106105a3_patch_v1_blocks_block_id_children_1897b4deRequest:
+    - name: children
+      TYPE: "[]STRUCT(blockObjectRequest)"
+      REQUIRED: true
+      comment: Child content to append to a container block as an array of [block objects](ref:block)
+    - name: after
+      TYPE: STRING
+      REQUIRED: false
+      comment: The ID of the existing block that the new block should be appended after.
+  patch_block_children_106105a3_patch_v1_blocks_block_id_children_1897b4deResponse200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  patch_block_children_106105a3_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_a_block_6ff36171_get_v1_blocks_block_id_28326cc6Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  retrieve_a_block_6ff36171_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  update_a_block_6dee0d4e_patch_v1_blocks_block_id_28326cc6Request_type:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  update_a_block_6dee0d4e_patch_v1_blocks_block_id_28326cc6Request:
+    - name: type
+      TYPE: STRUCT(update_a_block_6dee0d4e_patch_v1_blocks_block_id_28326cc6Request_type)
+      REQUIRED: false
+      comment: The [block object `type`](ref:block#block-object-keys) value with the properties to be updated. Currently only `text` (for supported block types) and `checked` (for `to_do` blocks) fields can be updated.
+    - name: archived
+      TYPE: BOOL
+      REQUIRED: false
+      DEFAULT: true
+      comment: Set to true to archive (delete) a block. Set to false to un-archive (restore) a block.
+  update_a_block_6dee0d4e_patch_v1_blocks_block_id_28326cc6Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  update_a_block_6dee0d4e_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  delete_a_block_b2a2911e_delete_v1_blocks_block_id_28326cc6Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  delete_a_block_b2a2911e_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_a_page_12efd5c3_get_v1_pages_page_id_2c6852aResponse200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  retrieve_a_page_12efd5c3_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest_icon:
+    - name: emoji
+      TYPE: STRING
+      REQUIRED: true
+  patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest_cover_external:
+    - name: url
+      TYPE: STRING
+      REQUIRED: true
+  patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest_cover:
+    - name: external
+      TYPE: STRUCT(patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest_cover_external)
+      REQUIRED: true
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+      ENUM:
+        - external
+  patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest:
+    - name: properties
+      TYPE: map[STRING]ANY
+      REQUIRED: false
+      comment: The property values to update for the page. The keys are the names or IDs of the property and the values are property values. If a page property ID is not included, then it is not changed.
+    - name: in_trash
+      TYPE: BOOL
+      REQUIRED: false
+      DEFAULT: false
+      comment: Set to true to delete a block. Set to false to restore a block.
+    - name: archived
+      TYPE: BOOL
+      REQUIRED: false
+    - name: icon
+      TYPE: STRUCT(patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest_icon)
+      REQUIRED: false
+      comment: A page icon for the page. Supported types are [external file object](https://developers.notion.com/reference/file-object) or [emoji object](https://developers.notion.com/reference/emoji-object).
+    - name: cover
+      TYPE: STRUCT(patch_page_e614087f_patch_v1_pages_page_id_2c6852aRequest_cover)
+      REQUIRED: false
+      comment: A cover image for the page. Only [external file objects](https://developers.notion.com/reference/file-object) are supported.
+  patch_page_e614087f_patch_v1_pages_page_id_2c6852aResponse200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  patch_page_e614087f_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  post_page_ff865fb5_post_v1_pages_6cf72cdaRequest:
+    - name: parent
+      TYPE: STRUCT(parentRequest)
+      REQUIRED: true
+    - name: properties
+      TYPE: map[STRING]ANY
+      REQUIRED: true
+      comment: The property values for the new page. The keys are the names or IDs of the property and the values are property values.
+    - name: children
+      TYPE: "[]STRING"
+      REQUIRED: false
+      comment: The content to be rendered on the new page, represented as an array of [block objects](https://developers.notion.com/reference/block).
+    - name: icon
+      TYPE: STRING
+      REQUIRED: false
+      FORMAT: json
+      comment: The icon of the new page. Either an [emoji object](https://developers.notion.com/reference/emoji-object) or an [external file object](https://developers.notion.com/reference/file-object)..
+    - name: cover
+      TYPE: STRING
+      REQUIRED: false
+      FORMAT: json
+      comment: The cover image of the new page, represented as a [file object](https://developers.notion.com/reference/file-object).
+  post_page_ff865fb5_post_v1_pages_6cf72cdaResponse200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  post_page_ff865fb5_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_a_page_property_d7c8bb95_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_a_comment_8e2c7839_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  create_a_comment_9b93faa7_post_v1_comments_bb10a790Request_parent:
+    - name: page_id
+      TYPE: STRING
+      REQUIRED: true
+      comment: the page ID
+  create_a_comment_9b93faa7_post_v1_comments_bb10a790Request_rich_text_Item_text:
+    - name: content
+      TYPE: STRING
+      REQUIRED: true
+      comment: The content of the comment
+  create_a_comment_9b93faa7_post_v1_comments_bb10a790Request_rich_text_Item:
+    - name: text
+      TYPE: STRUCT(create_a_comment_9b93faa7_post_v1_comments_bb10a790Request_rich_text_Item_text)
+      REQUIRED: true
+  create_a_comment_9b93faa7_post_v1_comments_bb10a790Request:
+    - name: parent
+      TYPE: STRUCT(create_a_comment_9b93faa7_post_v1_comments_bb10a790Request_parent)
+      REQUIRED: true
+      comment: The page that contains the comment
+    - name: rich_text
+      TYPE: "[]STRUCT(create_a_comment_9b93faa7_post_v1_comments_bb10a790Request_rich_text_Item)"
+      REQUIRED: true
+  create_a_comment_9b93faa7_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  query_data_source_5412a200_post_v1_data_sources_data_source_id_query_4ca3a029Request_filter:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  query_data_source_5412a200_post_v1_data_sources_data_source_id_query_4ca3a029Request:
+    - name: filter
+      TYPE: STRUCT(query_data_source_5412a200_post_v1_data_sources_data_source_id_query_4ca3a029Request_filter)
+      REQUIRED: false
+      comment: Filter conditions for querying the data source
+    - name: sorts
+      TYPE: "[]STRUCT(sortObject)"
+      REQUIRED: false
+    - name: start_cursor
+      TYPE: STRING
+      REQUIRED: false
+    - name: page_size
+      TYPE: INT
+      REQUIRED: false
+      DEFAULT: 100
+    - name: archived
+      TYPE: BOOL
+      REQUIRED: false
+    - name: in_trash
+      TYPE: BOOL
+      REQUIRED: false
+  query_data_source_5412a200_post_v1_data_sources_data_source_id_query_4ca3a029Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  query_data_source_5412a200_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_a_data_source_e19def7e_get_v1_data_sources_data_source_id_84366184Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  retrieve_a_data_source_e19def7e_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  update_a_data_source_8db34d1b_patch_v1_data_sources_data_source_id_84366184Request_properties:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  update_a_data_source_8db34d1b_patch_v1_data_sources_data_source_id_84366184Request:
+    - name: title
+      TYPE: "[]STRUCT(richTextRequest)"
+      REQUIRED: false
+    - name: description
+      TYPE: "[]STRUCT(richTextRequest)"
+      REQUIRED: false
+      MAX_ITEMS: 100
+    - name: properties
+      TYPE: STRUCT(update_a_data_source_8db34d1b_patch_v1_data_sources_data_source_id_84366184Request_properties)
+      REQUIRED: false
+      comment: Property schema updates
+  update_a_data_source_8db34d1b_patch_v1_data_sources_data_source_id_84366184Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  update_a_data_source_8db34d1b_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  create_a_data_source_82bcf8ec_post_v1_data_sources_13a2dd67Request_properties:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  create_a_data_source_82bcf8ec_post_v1_data_sources_13a2dd67Request:
+    - name: parent
+      TYPE: STRUCT(pageIdParentRequest)
+      REQUIRED: true
+    - name: properties
+      TYPE: STRUCT(create_a_data_source_82bcf8ec_post_v1_data_sources_13a2dd67Request_properties)
+      REQUIRED: true
+      comment: Property schema of data source
+    - name: title
+      TYPE: "[]STRUCT(richTextRequest)"
+      REQUIRED: false
+      MAX_ITEMS: 100
+  create_a_data_source_82bcf8ec_post_v1_data_sources_13a2dd67Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  create_a_data_source_82bcf8ec_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  list_data_source_templates_91fded62_get_v1_data_sources_data_source_id_templates_34251382Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  list_data_source_templates_91fded62_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_a_database_19c71bdb_get_v1_databases_database_id_aed3eb5aResponse200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  retrieve_a_database_19c71bdb_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  move_page_66026186_post_v1_pages_page_id_move_522a7c30Request:
+    - name: parent
+      TYPE: STRUCT(movePageParentRequest)
+      REQUIRED: true
+  move_page_66026186_post_v1_pages_page_id_move_522a7c30Response200:
+    - name: value
+      TYPE: ANY
+      REQUIRED: false
+  move_page_66026186_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_page_markdown_7e9eed45_get_v1_pages_page_id_markdown_e00e6ffcResponse200:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: page_markdown
+    - name: id
+      TYPE: STRING
+      REQUIRED: false
+      FORMAT: uuid
+      comment: ID of the page or block.
+    - name: markdown
+      TYPE: STRING
+      REQUIRED: false
+      comment: Page content rendered as enhanced Markdown.
+    - name: truncated
+      TYPE: BOOL
+      REQUIRED: false
+      comment: True if content was truncated because the page exceeds the block limit.
+    - name: unknown_block_ids
+      TYPE: "[]STRING"
+      REQUIRED: false
+      comment: Block IDs that could not be rendered (e.g. due to permissions or truncation). Pass them back to this endpoint to fetch them individually.
+  retrieve_page_markdown_7e9eed45_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_page_markdown_7e9eed45_Error403:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 403
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_page_markdown_7e9eed45_Error404:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 404
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  retrieve_page_markdown_7e9eed45_Error429:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 429
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_replace_content:
+    - name: new_str
+      TYPE: STRING
+      REQUIRED: true
+      comment: The complete new page content as enhanced Markdown.
+    - name: allow_deleting_content
+      TYPE: BOOL
+      REQUIRED: false
+      comment: Permit deletion of existing child pages/databases that are no longer present in the new content.
+  update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_update_content_content_updates_Item:
+    - name: old_str
+      TYPE: STRING
+      REQUIRED: true
+      comment: Exact existing Markdown text to find.
+    - name: new_str
+      TYPE: STRING
+      REQUIRED: true
+      comment: Replacement Markdown text.
+    - name: replace_all_matches
+      TYPE: BOOL
+      REQUIRED: false
+      comment: Replace every occurrence of old_str instead of just the first (default false).
+  update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_update_content:
+    - name: content_updates
+      TYPE: "[]STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_update_content_content_updates_Item)"
+      REQUIRED: true
+      MAX_ITEMS: 100
+      comment: Up to 100 find-and-replace edits applied in order.
+    - name: allow_deleting_content
+      TYPE: BOOL
+      REQUIRED: false
+      comment: Permit deletion of existing child pages/databases removed by the edits.
+  update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_insert_content_position:
+    - name: type
+      TYPE: STRING
+      REQUIRED: false
+      ENUM:
+        - start
+        - end
+  update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_insert_content:
+    - name: content
+      TYPE: STRING
+      REQUIRED: true
+      comment: Enhanced Markdown to insert.
+    - name: after
+      TYPE: STRING
+      REQUIRED: false
+      comment: Ellipsis-format selection ("start text...end text") to insert after. Cannot be combined with position.
+    - name: position
+      TYPE: STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_insert_content_position)
+      REQUIRED: false
+      comment: Insert at the start or end of the page. Cannot be combined with after.
+  update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_replace_content_range:
+    - name: content
+      TYPE: STRING
+      REQUIRED: true
+      comment: New Markdown content for the range.
+    - name: content_range
+      TYPE: STRING
+      REQUIRED: true
+      comment: Ellipsis-format selection ("start text...end text") identifying the range to replace.
+    - name: allow_deleting_content
+      TYPE: BOOL
+      REQUIRED: false
+      comment: Permit deletion of child pages/databases within the replaced range.
+  update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest:
+    - name: type
+      TYPE: STRING
+      REQUIRED: true
+      ENUM:
+        - replace_content
+        - update_content
+        - insert_content
+        - replace_content_range
+      comment: The kind of edit to apply. Prefer `replace_content` (overwrite the whole page) or `update_content` (targeted find-and-replace). `insert_content` and `replace_content_range` are deprecated.
+    - name: replace_content
+      TYPE: STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_replace_content)
+      REQUIRED: false
+      comment: Provide when type is `replace_content`. Replaces the entire page content.
+    - name: update_content
+      TYPE: STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_update_content)
+      REQUIRED: false
+      comment: Provide when type is `update_content`. Applies targeted find-and-replace edits.
+    - name: insert_content
+      TYPE: STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_insert_content)
+      REQUIRED: false
+      DEPRECATED: true
+      comment: Deprecated. Provide when type is `insert_content`. Inserts Markdown at a position.
+    - name: replace_content_range
+      TYPE: STRUCT(update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcRequest_replace_content_range)
+      REQUIRED: false
+      DEPRECATED: true
+      comment: Deprecated. Provide when type is `replace_content_range`. Replaces a selected range of Markdown.
+  update_page_markdown_2ab44ae2_patch_v1_pages_page_id_markdown_e00e6ffcResponse200:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: page_markdown
+    - name: id
+      TYPE: STRING
+      REQUIRED: false
+      FORMAT: uuid
+      comment: ID of the page or block.
+    - name: markdown
+      TYPE: STRING
+      REQUIRED: false
+      comment: Page content rendered as enhanced Markdown.
+    - name: truncated
+      TYPE: BOOL
+      REQUIRED: false
+      comment: True if content was truncated because the page exceeds the block limit.
+    - name: unknown_block_ids
+      TYPE: "[]STRING"
+      REQUIRED: false
+      comment: Block IDs that could not be rendered (e.g. due to permissions or truncation). Pass them back to this endpoint to fetch them individually.
+  update_page_markdown_2ab44ae2_Error400:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 400
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  update_page_markdown_2ab44ae2_Error403:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 403
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  update_page_markdown_2ab44ae2_Error404:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 404
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  update_page_markdown_2ab44ae2_Error409:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 409
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false
+  update_page_markdown_2ab44ae2_Error429:
+    - name: object
+      TYPE: STRING
+      REQUIRED: false
+      EXAMPLE: error
+    - name: status
+      TYPE: INT
+      REQUIRED: false
+      EXAMPLE: 429
+    - name: code
+      TYPE: STRING
+      REQUIRED: false
+    - name: message
+      TYPE: STRING
+      REQUIRED: false

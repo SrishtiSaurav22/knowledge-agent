@@ -1,0 +1,874 @@
+{
+  "methods": [
+    {
+      "method_uuid": "",
+      "method_name": "Add a custom emoji",
+      "canonical_id": "slack.admin.emoji.add.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add a file from a remote service",
+      "canonical_id": "slack.files.remote.add.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add a new emoji alias",
+      "canonical_id": "slack.admin.emoji.addalia.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add a new reminder",
+      "canonical_id": "slack.reminders.add.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add a reaction to an item",
+      "canonical_id": "slack.reactions.add.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add a star to an item",
+      "canonical_id": "slack.stars.add.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add an Enterprise user to a workspace",
+      "canonical_id": "slack.admin.users.assign.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add default channels to an IDP group",
+      "canonical_id": "slack.admin.usergroups.addchannel.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add default workspaces to an organization-wide IDP group",
+      "canonical_id": "slack.admin.usergroups.addteam.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Add participants to a call",
+      "canonical_id": "slack.calls.participants.add.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Allow specific IDP groups to access a channel",
+      "canonical_id": "slack.admin.conversations.restrictaccess.addgroup.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Approve a workspace invite request",
+      "canonical_id": "slack.admin.inviterequests.approve.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Approve an app for workspace installation",
+      "canonical_id": "slack.admin.apps.approve.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Archive a conversation",
+      "canonical_id": "slack.conversations.archive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Archive a public or private channel",
+      "canonical_id": "slack.admin.conversations.archive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Change a user's role to regular",
+      "canonical_id": "slack.admin.users.setregular.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Check API health and status",
+      "canonical_id": "slack.api.test.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Close a direct message conversation",
+      "canonical_id": "slack.conversations.close.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Convert a public channel to a private channel",
+      "canonical_id": "slack.admin.conversations.converttoprivate.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new Enterprise team",
+      "canonical_id": "slack.admin.teams.create.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new public or private conversation",
+      "canonical_id": "slack.conversations.create.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new user group",
+      "canonical_id": "slack.usergroups.create.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a public or private channel-based conversation",
+      "canonical_id": "slack.admin.conversations.create.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Customize how URLs shared in chat unfurl",
+      "canonical_id": "slack.chat.unfurl.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a chat message",
+      "canonical_id": "slack.chat.delete.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a comment on a file",
+      "canonical_id": "slack.files.comments.delete.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a pending scheduled chat message",
+      "canonical_id": "slack.chat.deletescheduledmessage.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a public or private channel",
+      "canonical_id": "slack.admin.conversations.delete.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a reminder",
+      "canonical_id": "slack.reminders.delete.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a remote file",
+      "canonical_id": "slack.files.remote.remove.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a user's profile photo",
+      "canonical_id": "slack.users.deletephoto.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete one or more files",
+      "canonical_id": "slack.files.delete.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Deny a workspace invite request",
+      "canonical_id": "slack.admin.inviterequests.deny.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Disable an existing user group",
+      "canonical_id": "slack.usergroups.disable.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Disconnect a channel from workspaces",
+      "canonical_id": "slack.admin.conversations.disconnectshared.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Enable a user group",
+      "canonical_id": "slack.usergroups.enable.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "End a call",
+      "canonical_id": "slack.calls.end.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "End the current Do Not Disturb session",
+      "canonical_id": "slack.dnd.enddnd.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "End user's snooze mode",
+      "canonical_id": "slack.dnd.endsnooze.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Exchange an OAuth verifier code for a workspace token",
+      "canonical_id": "slack.oauth.token.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Exchange an OAuth verifier code for an access token",
+      "canonical_id": "slack.oauth.access.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Exchange an OAuth verifier code for an access token",
+      "canonical_id": "slack.oauth.v2.access.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Fetch integration logs for the current team",
+      "canonical_id": "slack.team.integrationlog.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Fetch replies for a conversation thread",
+      "canonical_id": "slack.conversations.reply.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Fetch user profile information",
+      "canonical_id": "slack.users.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Find a user by their email address",
+      "canonical_id": "slack.users.lookupbyemail.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Find workspaces connected to a channel",
+      "canonical_id": "slack.admin.conversations.getteam.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of all teams within an enterprise organization",
+      "canonical_id": "slack.admin.teams.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of all user reminders",
+      "canonical_id": "slack.reminders.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of all users on a Slack team",
+      "canonical_id": "slack.users.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of app requests for a team",
+      "canonical_id": "slack.admin.apps.requests.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of approved apps for an organization or workspace",
+      "canonical_id": "slack.admin.apps.approved.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of emoji for an Enterprise Grid organization",
+      "canonical_id": "slack.admin.emoji.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of pending workspace invite requests",
+      "canonical_id": "slack.admin.inviterequests.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of users for a workspace",
+      "canonical_id": "slack.admin.users.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of workspace admins",
+      "canonical_id": "slack.admin.teams.admins.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a permalink URL for a specific message",
+      "canonical_id": "slack.chat.getpermalink.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a team's profile information",
+      "canonical_id": "slack.team.profile.get.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a user's Do Not Disturb status",
+      "canonical_id": "slack.dnd.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a user's identity by token",
+      "canonical_id": "slack.users.identity.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a user's profile information",
+      "canonical_id": "slack.users.profile.get.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a user's reactions",
+      "canonical_id": "slack.reactions.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get billable user information for the current team",
+      "canonical_id": "slack.team.billableinfo.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get bot information",
+      "canonical_id": "slack.bots.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get conversation details and member count",
+      "canonical_id": "slack.conversations.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get conversation members",
+      "canonical_id": "slack.conversations.member.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get conversation preferences for a channel",
+      "canonical_id": "slack.admin.conversations.getconversationpref.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get Do Not Disturb status for multiple users",
+      "canonical_id": "slack.dnd.teaminfo.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get file information",
+      "canonical_id": "slack.files.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get information about a remote file",
+      "canonical_id": "slack.files.remote.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get information about a specific call",
+      "canonical_id": "slack.calls.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get information about a specific team",
+      "canonical_id": "slack.team.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get reminder information",
+      "canonical_id": "slack.reminders.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get the app's team permissions",
+      "canonical_id": "slack.apps.permissions.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get user presence information",
+      "canonical_id": "slack.users.getpresence.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get workspace settings information",
+      "canonical_id": "slack.admin.teams.settings.info.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Invalidate a user's session by session ID",
+      "canonical_id": "slack.admin.users.session.invalidate.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Invite a user to a public or private channel",
+      "canonical_id": "slack.admin.conversations.invite.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Invite a user to a workspace",
+      "canonical_id": "slack.admin.users.invite.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Invite users to a channel",
+      "canonical_id": "slack.conversations.invite.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Join an existing conversation",
+      "canonical_id": "slack.conversations.join.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Leave a conversation",
+      "canonical_id": "slack.conversations.leave.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List all approved workspace invite requests",
+      "canonical_id": "slack.admin.inviterequests.approved.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List all channels in a Slack team",
+      "canonical_id": "slack.conversations.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List all denied workspace invite requests",
+      "canonical_id": "slack.admin.inviterequests.denied.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List all owners for a specific team",
+      "canonical_id": "slack.admin.teams.owners.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List all user groups for a team",
+      "canonical_id": "slack.usergroups.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List all users within a specified user group",
+      "canonical_id": "slack.usergroups.users.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List app authorizations visible to an event",
+      "canonical_id": "slack.apps.event.authorizations.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List channels for an org-level user group",
+      "canonical_id": "slack.admin.usergroups.listchannel.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List custom team emoji",
+      "canonical_id": "slack.emoji.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List disconnected channels and their original IDs for EKM key revocation",
+      "canonical_id": "slack.admin.conversations.ekm.listoriginalconnectedchannelinfo.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List files for a team, channel, or user with filters",
+      "canonical_id": "slack.files.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List IDP groups linked to a channel",
+      "canonical_id": "slack.admin.conversations.restrictaccess.listgroup.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List items pinned to a channel",
+      "canonical_id": "slack.pins.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List remote files added to Slack",
+      "canonical_id": "slack.files.remote.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List resource grants an app has on a team",
+      "canonical_id": "slack.apps.permissions.resources.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List restricted apps for an organization or workspace",
+      "canonical_id": "slack.admin.apps.restricted.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List scheduled messages in a channel",
+      "canonical_id": "slack.chat.scheduledmessages.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List stars for a user",
+      "canonical_id": "slack.stars.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List the scopes your app has on a team",
+      "canonical_id": "slack.apps.permissions.scopes.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List user conversations",
+      "canonical_id": "slack.users.conversation.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List user grants and scopes for an app on a team",
+      "canonical_id": "slack.apps.permissions.users.list.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Make a file publicly shareable",
+      "canonical_id": "slack.files.sharedpublicurl.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Map local user IDs to global user IDs for Enterprise Grid workspaces",
+      "canonical_id": "slack.migration.exchange.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Mark a conversation as read",
+      "canonical_id": "slack.conversations.mark.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Mark a reminder as complete",
+      "canonical_id": "slack.reminders.complete.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Mark a user as active, though this functionality is deprecated",
+      "canonical_id": "slack.users.setactive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Open a dialog with a user",
+      "canonical_id": "slack.dialog.open.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Open a view for a user",
+      "canonical_id": "slack.views.open.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Open or resume a direct message conversation",
+      "canonical_id": "slack.conversations.open.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Pin an item to a channel",
+      "canonical_id": "slack.pins.add.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Post a me message to a channel",
+      "canonical_id": "slack.chat.memessage.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Promote a user to admin status",
+      "canonical_id": "slack.admin.users.setadmin.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Publish a static view for a user",
+      "canonical_id": "slack.views.publish.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Push a view onto a root view's stack",
+      "canonical_id": "slack.views.push.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Register a new call",
+      "canonical_id": "slack.calls.add.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a linked IDP group from a private channel",
+      "canonical_id": "slack.admin.conversations.restrictaccess.removegroup.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a pin from a channel",
+      "canonical_id": "slack.pins.remove.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a reaction from an item",
+      "canonical_id": "slack.reactions.remove.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a star from an item",
+      "canonical_id": "slack.stars.remove.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a user from a conversation",
+      "canonical_id": "slack.conversations.kick.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a user from a workspace",
+      "canonical_id": "slack.admin.users.remove.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove an emoji from an Enterprise Grid organization",
+      "canonical_id": "slack.admin.emoji.remove.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove default channels from an org-level user group",
+      "canonical_id": "slack.admin.usergroups.removechannel.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove participants from a call",
+      "canonical_id": "slack.calls.participants.remove.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Rename a conversation",
+      "canonical_id": "slack.conversations.rename.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Rename a public or private channel",
+      "canonical_id": "slack.admin.conversations.rename.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Rename an emoji",
+      "canonical_id": "slack.admin.emoji.rename.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Report a workflow step execution failure",
+      "canonical_id": "slack.workflows.stepfailed.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Request additional app permissions",
+      "canonical_id": "slack.apps.permissions.request.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Request user access to app scopes",
+      "canonical_id": "slack.apps.permissions.users.request.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Reset all user sessions across all devices",
+      "canonical_id": "slack.admin.users.session.reset.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Restrict an app from being installed on a workspace",
+      "canonical_id": "slack.admin.apps.restrict.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve a conversation's message history",
+      "canonical_id": "slack.conversations.history.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve access logs for the current team",
+      "canonical_id": "slack.team.accesslog.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve reactions for a specific item",
+      "canonical_id": "slack.reactions.get.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Revoke an authentication token",
+      "canonical_id": "slack.auth.revoke.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Revoke public sharing access for a file",
+      "canonical_id": "slack.files.revokepublicurl.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Schedule a message to be sent to a channel",
+      "canonical_id": "slack.chat.schedulemessage.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Search for messages with specific criteria",
+      "canonical_id": "slack.search.message.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Search for public or private channels",
+      "canonical_id": "slack.admin.conversations.search.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Send a message to a channel",
+      "canonical_id": "slack.chat.postmessage.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Send a private message to a user in a channel",
+      "canonical_id": "slack.chat.postephemeral.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set a user's online status",
+      "canonical_id": "slack.users.setpresence.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set a workspace's description",
+      "canonical_id": "slack.admin.teams.settings.setdescription.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set a workspace's icon",
+      "canonical_id": "slack.admin.teams.settings.seticon.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set an existing user to be a workspace owner",
+      "canonical_id": "slack.admin.users.setowner.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set an expiration date for a guest user",
+      "canonical_id": "slack.admin.users.setexpiration.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set default channels for a workspace",
+      "canonical_id": "slack.admin.teams.settings.setdefaultchannel.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set Do Not Disturb mode for the user",
+      "canonical_id": "slack.dnd.setsnooze.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set posting permissions for a public or private channel",
+      "canonical_id": "slack.admin.conversations.setconversationpref.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set the purpose for a conversation",
+      "canonical_id": "slack.conversations.setpurpose.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set the topic for a conversation",
+      "canonical_id": "slack.conversations.settopic.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set workspace discoverability settings for admins",
+      "canonical_id": "slack.admin.teams.settings.setdiscoverability.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Set workspaces connected to a channel in an Enterprise Grid org",
+      "canonical_id": "slack.admin.conversations.setteam.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Share a remote file into a channel",
+      "canonical_id": "slack.files.remote.share.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Signal workflow step completion with execution ID and outputs",
+      "canonical_id": "slack.workflows.stepcompleted.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Start a Real Time Messaging session",
+      "canonical_id": "slack.rtm.connect.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Unarchive a conversation",
+      "canonical_id": "slack.conversations.unarchive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Unarchive a public or private channel",
+      "canonical_id": "slack.admin.conversations.unarchive.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Uninstall your app from a workspace",
+      "canonical_id": "slack.apps.uninstall.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a chat message",
+      "canonical_id": "slack.chat.update.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a user's profile information",
+      "canonical_id": "slack.users.profile.set.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a workflow extension step's configuration",
+      "canonical_id": "slack.workflows.updatestep.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a workspace's name",
+      "canonical_id": "slack.admin.teams.settings.setname.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update an existing remote file",
+      "canonical_id": "slack.files.remote.update.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update an existing user group",
+      "canonical_id": "slack.usergroups.update.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update an existing view",
+      "canonical_id": "slack.views.update.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update call information",
+      "canonical_id": "slack.calls.update.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update users within a user group",
+      "canonical_id": "slack.usergroups.users.update.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Upload and set a user's profile photo",
+      "canonical_id": "slack.users.setphoto.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Upload or create a file",
+      "canonical_id": "slack.files.upload.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Verify authentication and identity",
+      "canonical_id": "slack.auth.test.list"
+    }
+  ]
+}

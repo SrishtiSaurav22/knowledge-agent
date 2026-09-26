@@ -1,0 +1,475 @@
+{
+  "Gmail.gmail@v1": {
+    "version": "v1",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://gmail.googleapis.com/",
+    "methods": 79,
+    "auth": {
+      "provider_slug": "Gmail",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Gmail.gmailpostmastertools@v1": {
+    "version": "v1",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://gmailpostmastertools.googleapis.com/",
+    "methods": 3,
+    "auth": {
+      "provider_slug": "Gmail",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Gmail.gmailpostmastertools@v1beta1": {
+    "version": "v1beta1",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://gmailpostmastertools.googleapis.com/",
+    "methods": 3,
+    "auth": {
+      "provider_slug": "Gmail",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Gmail.gmailpostmastertools@v2": {
+    "version": "v2",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://gmailpostmastertools.googleapis.com/",
+    "methods": 10,
+    "auth": {
+      "provider_slug": "Gmail",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Google Drive.drive@v2": {
+    "version": "v2",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://www.googleapis.com/drive/v2",
+    "methods": 75,
+    "auth": {
+      "provider_slug": "Google Drive",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Google Drive.drive@v3": {
+    "version": "v3",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://www.googleapis.com/drive/v3",
+    "methods": 64,
+    "auth": {
+      "provider_slug": "Google Drive",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Google Drive.driveactivity@v2": {
+    "version": "v2",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://driveactivity.googleapis.com/",
+    "methods": 1,
+    "auth": {
+      "provider_slug": "Google Drive",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Google Drive.drivelabels@v2": {
+    "version": "v2",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://drivelabels.googleapis.com/",
+    "methods": 17,
+    "auth": {
+      "provider_slug": "Google Drive",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Google Drive.drivelabels@v2beta": {
+    "version": "v2beta",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://drivelabels.googleapis.com/",
+    "methods": 17,
+    "auth": {
+      "provider_slug": "Google Drive",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Notion.notion@2.0.0": {
+    "version": "2.0.0",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://api.notion.com",
+    "methods": 24,
+    "auth": {
+      "provider_slug": "Notion",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  },
+  "Slack.slack@1.7.0": {
+    "version": "1.7.0",
+    "sandbox_endpoint": "http://localhost",
+    "production_endpoint": "https://slack.com/api",
+    "methods": 174,
+    "auth": {
+      "provider_slug": "Slack",
+      "scopes": [],
+      "type": "oauth2"
+    },
+    "init_details": {
+      "VERSION": "2.0.2",
+      "auth_type": "oauth2"
+    },
+    "execution_policy": {
+      "max_retries": 3,
+      "base_delay_ms": 500,
+      "max_delay_ms": 30000,
+      "http_timeout_ms": 30000,
+      "connect_timeout_ms": 5000,
+      "total_timeout_ms": 90000,
+      "retry_on": [
+        429,
+        503,
+        504
+      ],
+      "non_retryable": [
+        400,
+        401,
+        403,
+        404,
+        422
+      ],
+      "on_401": "fail",
+      "max_concurrent": 5,
+      "max_response_bytes": 102400,
+      "idempotency": {
+        "mode": "none",
+        "header_name": "Idempotency-Key",
+        "scope": "call"
+      }
+    }
+  }
+}

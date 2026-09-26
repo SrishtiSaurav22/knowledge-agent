@@ -1,0 +1,13 @@
+.env
+.swytchcode/workspace.json
+.env
+.venv/
+venv/
+__pycache__/
+api-key-details.txt
+methods.txt
+STEPS.txt
+Knotic*.txt
+GEMINI.md
+runs/
+models.txt

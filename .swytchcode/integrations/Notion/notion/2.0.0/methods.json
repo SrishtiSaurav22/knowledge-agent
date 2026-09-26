@@ -1,0 +1,124 @@
+{
+  "methods": [
+    {
+      "method_uuid": "",
+      "method_name": "Append children to a block",
+      "canonical_id": "notion.children.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a comment on a page or discussion thread",
+      "canonical_id": "notion.comment.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new data source",
+      "canonical_id": "notion.data_source.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new page with provided details",
+      "canonical_id": "notion.page.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Fetch unresolved comments for a page or block",
+      "canonical_id": "notion.comment.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a database by its ID and retrieve its metadata",
+      "canonical_id": "notion.databas.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a list of all users",
+      "canonical_id": "notion.user.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific block by its ID",
+      "canonical_id": "notion.block.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific page by its ID",
+      "canonical_id": "notion.page.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a specific page property item",
+      "canonical_id": "notion.property.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get children of a specific block",
+      "canonical_id": "notion.children.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get data source details and schema",
+      "canonical_id": "notion.data_source.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get Notion page content as enhanced Markdown",
+      "canonical_id": "notion.markdown.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get the bot user associated with your token",
+      "canonical_id": "notion.me.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get user details by their ID",
+      "canonical_id": "notion.user.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List templates available for a data source",
+      "canonical_id": "notion.template.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Move a page to a different parent location",
+      "canonical_id": "notion.move.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Query a data source with filters and sorting",
+      "canonical_id": "notion.query.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Remove a specific block by its ID",
+      "canonical_id": "notion.block.delete"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Search for posts by title",
+      "canonical_id": "notion.search.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a data source's properties",
+      "canonical_id": "notion.data_source.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a page's content using Markdown",
+      "canonical_id": "notion.markdown.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a specific block's details",
+      "canonical_id": "notion.block.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update page properties",
+      "canonical_id": "notion.page.update"
+    }
+  ]
+}

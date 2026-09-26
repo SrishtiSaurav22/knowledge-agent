@@ -1,0 +1,89 @@
+{
+  "methods": [
+    {
+      "method_uuid": "",
+      "method_name": "Batch update label permissions",
+      "canonical_id": "drivelabels.permissionsbatchupdate.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Create a new label for Google Drive",
+      "canonical_id": "drivelabels.label.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete a label's permission",
+      "canonical_id": "drivelabels.resource.execute"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Delete label permissions",
+      "canonical_id": "drivelabels.permissionsbatchdelete.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Disable a published label",
+      "canonical_id": "drivelabels.namedisable.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Enable a disabled label and restore it to published state",
+      "canonical_id": "drivelabels.nameenable.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Enable or disable a label for a Google Workspace app",
+      "canonical_id": "drivelabels.nameupdatelabelenabledappsetting.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get a label's permissions",
+      "canonical_id": "drivelabels.permission.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Get label structure constraints like max fields and title length",
+      "canonical_id": "drivelabels.limit.label.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "List label locks for a given parent",
+      "canonical_id": "drivelabels.lock.get"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Publish all draft changes to a label",
+      "canonical_id": "drivelabels.namepublish.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Retrieve a specific label using its resource name",
+      "canonical_id": "drivelabels.resource.execute.1"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Search and list available labels",
+      "canonical_id": "drivelabels.label.list"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a label with a set of changes",
+      "canonical_id": "drivelabels.namedelta.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a label's copy mode",
+      "canonical_id": "drivelabels.nameupdatelabelcopymode.create"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a label's permissions",
+      "canonical_id": "drivelabels.permission.update"
+    },
+    {
+      "method_uuid": "",
+      "method_name": "Update a label's permissions",
+      "canonical_id": "drivelabels.permission.create"
+    }
+  ]
+}
